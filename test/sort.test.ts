@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { bubbleSort, insertionSort, mergeSort, quickSort, selectionSort } from '../src/sort';
+import { bubbleSort, heapSort, insertionSort, mergeSort, quickSort, selectionSort } from '../src/sort';
 import { randomArray } from '../src/sort/utils';
 
 /** 待排序数组集 */
@@ -9,7 +9,7 @@ let standardArrays: number[][];
 
 describe('排序方法测试', () => {
   beforeEach(() => {
-    targetArrays = Array.from({ length: 100 }, () => randomArray(10, { min: -100, max: 100 }));
+    targetArrays = Array.from({ length: 100 }, () => randomArray(50, { min: -100, max: 100 }));
     standardArrays = targetArrays.map((arr) => [...arr].sort((a, b) => a - b));
   });
 
@@ -40,6 +40,12 @@ describe('排序方法测试', () => {
   it('快速排序', () => {
     targetArrays.forEach((targetArray, index) => {
       expect(quickSort([...targetArray])).to.deep.equal(standardArrays[index]);
+    });
+  });
+
+  it('堆排序', () => {
+    targetArrays.forEach((targetArray, index) => {
+      expect(heapSort([...targetArray])).to.deep.equal(standardArrays[index]);
     });
   });
 });

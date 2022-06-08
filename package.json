@@ -60,8 +60,7 @@
     "bail": true,
     "parallel": true,
     "spec": [
-      "test/**/*.test.ts",
-      "test/**/*.spec.ts"
+      "test/**/*.test.ts"
     ],
     "extension": ["js", "ts", "tsx"],
     "require": [
