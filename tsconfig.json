@@ -24,13 +24,17 @@
     "allowUnusedLabels": false,
     "jsx": "react",
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "node",
+      "mocha"
+    ]
   },
   "exclude": [
+    "coverage",
     "node_modules",
     "lib",
-    "index.d.ts",
-    "__mocks__"
+    "index.d.ts"
   ],
   "ts-node": {
     "compilerOptions": {

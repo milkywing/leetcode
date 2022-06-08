@@ -1,4 +1,4 @@
-import { randomArray, range, swap } from './utils';
+import { range, swap } from './utils';
 
 /** 冒泡排序——O(n^2)——稳定 */
 export const bubbleSort = (arr: number[]) => {
@@ -46,31 +46,3 @@ export const insertionSort = (arr: number[]) => {
 
   return arr;
 };
-
-/** 校验排序算法的准确性 */
-const testSort = () => {
-  const allPass = range(0, 100).every(() => {
-    const originArray = randomArray(100, { min: -50, max: 50 });
-    // 标准排序
-    const sortedArray = [...originArray].sort((a, b) => a - b);
-    // 冒泡排序
-    const bubbleSortedArray = bubbleSort([...originArray]);
-    // 选择排序
-    const selectionSortedArray = selectionSort([...originArray]);
-    // 插入排序
-    const insertionSortedArray = insertionSort([...originArray]);
-
-    const singlePass = sortedArray.every((value, index) => {
-      if (bubbleSortedArray[index] !== value) return false;
-      if (selectionSortedArray[index] !== value) return false;
-      if (insertionSortedArray[index] !== value) return false;
-      return true;
-    });
-
-    return singlePass;
-  });
-
-  if (!allPass) throw Error('排序算法有误');
-};
-
-testSort();

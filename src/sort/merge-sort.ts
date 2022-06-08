@@ -1,5 +1,3 @@
-import { randomArray, range } from './utils';
-
 // 递归复杂度估计 master 公式 ：T(N) = a*T(N/b) + O(N^d)
 // log(b, a) > d => T(N) = O(N^log(b, a))
 // log(b, a) = d => T(N) = O(N^d * logN)
@@ -20,7 +18,7 @@ const merge = (left: number[], right: number[]) => {
 };
 
 /** 归并排序——O(n*log n)——不稳定 */
-export const mergeSort = (arr: number[]) => {
+export const mergeSort = (arr: number[]): number[] => {
   const arrLength = arr.length;
   if (arrLength < 2) {
     return arr;
@@ -33,25 +31,3 @@ export const mergeSort = (arr: number[]) => {
   // 对两半进行归并排序（递归），并将结果合并为整体有序
   return merge(mergeSort(left), mergeSort(right));
 };
-
-/** 校验排序算法的准确性 */
-const testSort = () => {
-  const allPass = range(0, 100).every(() => {
-    const originArray = randomArray(100, { min: -50, max: 50 });
-    // 标准排序
-    const sortedArray = [...originArray].sort((a, b) => a - b);
-    // 归并排序
-    const mergeSortedArray = mergeSort([...originArray]);
-
-    const singlePass = sortedArray.every((value, index) => {
-      if (mergeSortedArray[index] !== value) return false;
-      return true;
-    });
-
-    return singlePass;
-  });
-
-  if (!allPass) throw Error('排序算法有误');
-};
-
-testSort();

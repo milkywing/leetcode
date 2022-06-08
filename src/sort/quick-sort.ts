@@ -1,4 +1,4 @@
-import { randomArray, range, swap } from './utils';
+import { swap } from './utils';
 
 // 排序核心，默认取right位置的值作为基准，对[left, right]区间的数进行划分，使其按【小于基准、等于基准、大于基准】排序，并返回等于基准值区边界，本质是把基准值放到正确的位置
 const partition = (arr: number[], left: number, right: number) => {
@@ -54,25 +54,3 @@ export const quickSort = (arr: number[]) => {
 
   return arr;
 };
-
-/** 校验排序算法的准确性 */
-const testSort = () => {
-  const allPass = range(0, 100).every(() => {
-    const originArray = randomArray(100, { min: -50, max: 50 });
-    // 标准排序
-    const sortedArray = [...originArray].sort((a, b) => a - b);
-    // 快速排序
-    const quickSortedArray = quickSort([...originArray]);
-
-    const singlePass = sortedArray.every((value, index) => {
-      if (quickSortedArray[index] !== value) return false;
-      return true;
-    });
-
-    return singlePass;
-  });
-
-  if (!allPass) throw Error('排序算法有误');
-};
-
-testSort();
