@@ -70,7 +70,7 @@ const testSort = () => {
     return singlePass;
   });
 
-  if (allPass) console.log('校验通过');
+  if (!allPass) throw Error('排序算法有误');
 };
 
 testSort();
