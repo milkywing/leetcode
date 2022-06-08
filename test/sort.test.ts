@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { bubbleSort, heapSort, insertionSort, mergeSort, quickSort, selectionSort } from '../src/sort';
+import { bubbleSort, heapSort, insertionSort, mergeSort, quickSort, radixSort, selectionSort } from '../src/sort';
 import { randomArray } from '../src/sort/utils';
 
 /** 待排序数组集 */
@@ -46,6 +46,12 @@ describe('排序方法测试', () => {
   it('堆排序', () => {
     targetArrays.forEach((targetArray, index) => {
       expect(heapSort([...targetArray])).to.deep.equal(standardArrays[index]);
+    });
+  });
+
+  it('基数排序', () => {
+    targetArrays.forEach((targetArray, index) => {
+      expect(radixSort([...targetArray])).to.deep.equal(standardArrays[index]);
     });
   });
 });

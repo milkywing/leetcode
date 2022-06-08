@@ -8,6 +8,7 @@ const merge = (left: number[], right: number[]) => {
   const result: number[] = [];
   while (left.length && right.length) {
     if (left[0] <= right[0]) {
+      // 相等时也优先靠背左侧的，维持稳定性
       result.push(left.shift()!);
     } else {
       result.push(right.shift()!);

@@ -46,8 +46,15 @@ const heapifyDown = (arr: number[], i: number, heapSize: number) => {
 /** 堆排序——O(n*log n)——不稳定 */
 export const heapSort = (arr: number[]) => {
   const arrLength = arr.length;
-  // 构建大顶堆
+
+  // 构建大顶堆方案1：扫描数组，把当前值作二叉树的尾节点，并对其进行向上调整，构造大顶堆
   rangeFromZero(arrLength).forEach((i) => heapifyUp(arr, i));
+
+  // 构建大顶堆方案2：对当前二叉树从下到上，从右到左进行对每个节点进行向下调整，构造大顶堆
+  // for (let i = arrLength - 1; i >= 0; i--) {
+  //   heapifyDown(arr, i, arrLength);
+  // }
+
   // 堆大小决定了当前可视堆
   let heapSize = arrLength;
 
