@@ -51,6 +51,17 @@
         "env": {
           "jest": true
         }
+      },
+      {
+        "files": [
+          "src/*.ts"
+        ],
+        "rules": {
+          "no-unused-vars": "warn",
+          "no-param-reassign": "off",
+          "no-use-before-define": "off",
+          "prefer-destructuring": "off"
+        }
       }
     ]
 }
