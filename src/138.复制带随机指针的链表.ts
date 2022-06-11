@@ -17,8 +17,8 @@ class RandNode {
     this.random = random === undefined ? null : random;
   }
 }
-// @lc code=start
 
+// @lc code=start
 /**
  * 解题关键：让拷贝节点 A' 和被拷贝节点 A 建立联系，通过 A 得知 A'，以便于拷贝 A 的随机指针。
  * 解法1：通过 Map 让 A' 和 A 建立联系

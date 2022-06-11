@@ -4,16 +4,7 @@
  * [1721] 交换链表中的节点
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
 function swapNodes(head: ListNode | null, k: number): ListNode | null {

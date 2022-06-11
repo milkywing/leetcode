@@ -4,40 +4,26 @@
  * [2095] 删除链表的中间节点
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
-
-/** 题中描述的中点在偶数情况下是偏右的，使用快慢指针找中点 */
+/** 题中描述的中点在偶数情况下是偏右的，使用快慢指针找中点的前一个节点 */
 function deleteMiddle(head: ListNode | null): ListNode | null {
   if (!head?.next) return null;
 
-  let fast = head;
-  let slow = head;
-  // prev 记录中间节点的前一个节点
-  let prev: ListNode | null = null;
+  // 创建哑节点
+  const dummyHead = new ListNode(0);
+  dummyHead.next = head;
+
+  let fast = dummyHead;
+  let slow = dummyHead;
+  // 快慢指针从哑节点出发，快指针结束后 slow 指向中点的前一个节点
   while (fast?.next?.next) {
     fast = fast.next.next;
-    prev = slow;
     slow = slow.next!;
   }
 
-  // 如果是偶数情况，取偏右值作为中点
-  if (fast?.next) {
-    prev = slow;
-    slow = slow.next!;
-  }
-
-  prev!.next = slow!.next;
+  slow.next = slow.next!.next;
 
   return head;
 }

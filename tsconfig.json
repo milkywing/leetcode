@@ -32,9 +32,7 @@
   },
   "exclude": [
     "coverage",
-    "node_modules",
-    "lib",
-    "index.d.ts"
+    "node_modules"
   ],
   "ts-node": {
     "compilerOptions": {

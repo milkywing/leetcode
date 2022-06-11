@@ -4,16 +4,7 @@
  * [21] 合并两个有序链表
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
 /** 迭代法 */

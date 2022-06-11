@@ -4,19 +4,9 @@
  * [160] 相交链表
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
-
 /**
  * 求无环相交链表的交点：
  * 遍历两条链表记录长度，如果两条链表的尾节点不相同，则两条链表不相交；长链表先走长度差值步，然后两条链表同时走，相遇点就是交点

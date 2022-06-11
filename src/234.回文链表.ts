@@ -4,16 +4,7 @@
  * [234] 回文链表
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
 function isPalindrome(head: ListNode | null): boolean {

@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 /** 十进制基数排序 */
 const radix = 10;
 

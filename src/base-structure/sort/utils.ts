@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 /** 生成[start, end)区间的整数序列 */
 export const range = (start: number, end: number) => Array.from({ length: end - start }, (_, i) => start + i);
 

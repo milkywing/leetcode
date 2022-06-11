@@ -4,19 +4,9 @@
  * [141] 环形链表
  */
 
-class ListNode {
-  public val: number;
-
-  public next: ListNode | null;
-
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from './model/node';
 
 // @lc code=start
-
 /** 使用快慢指针，快指针走到尽头则没环；两指针相遇则有环 */
 function hasCycle(head: ListNode | null): boolean {
   let slow = head;
