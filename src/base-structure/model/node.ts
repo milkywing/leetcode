@@ -1,6 +1,9 @@
+/** 二叉树节点 */
 export interface BinaryTreeNode<T = number> {
   value: T;
+  /** 左孩子 */
   left: BinaryTreeNode<T> | null;
+  /** 右孩子 */
   right: BinaryTreeNode<T> | null;
 }
 
