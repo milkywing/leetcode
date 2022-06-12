@@ -14,7 +14,6 @@ function reverseList(head: ListNode | null): ListNode | null {
   let prev: ListNode | null = null;
   let curr: ListNode | null = head;
   while (curr) {
-    // eslint-disable-next-line prefer-destructuring
     const next = curr.next;
     // 对当前节点换向，然后三指针整体前移
     curr.next = prev;

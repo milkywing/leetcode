@@ -32,12 +32,14 @@
   },
   "nyc": {
     "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
+      "src/base-structure/**/*.ts",
+      "src/base-structure/**/*.tsx"
     ],
     "exclude": [
-      "src/sort/utils.ts",
-      "**/*.d.ts"
+      "src/base-structure/**/index.ts",
+      "src/base-structure/sort/utils.ts",
+      "src/base-structure/model/**.ts",
+      "src/base-structure/test/**.ts"
     ],
     "extension": [
       ".ts",
@@ -60,7 +62,7 @@
     "bail": true,
     "parallel": true,
     "spec": [
-      "test/**/*.test.ts"
+      "**/test/**/*.test.ts"
     ],
     "extension": ["js", "ts", "tsx"],
     "require": [

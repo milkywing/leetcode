@@ -22,6 +22,10 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error"],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
       "import/prefer-default-export": "off",
       "import/no-unresolved": "off",
       "import/extensions": "off",
@@ -51,6 +55,9 @@
         ],
         "env": {
           "jest": true
+        },
+        "rules": {
+          "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
         }
       },
       {
@@ -59,6 +66,7 @@
         ],
         "rules": {
           "no-unused-vars": "warn",
+          "@typescript-eslint/no-unused-vars": ["warn"],
           "no-use-before-define": "off",
           "prefer-destructuring": "off"
         }

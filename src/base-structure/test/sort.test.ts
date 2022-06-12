@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { bubbleSort, heapSort, insertionSort, mergeSort, quickSort, radixSort, selectionSort } from '../src/sort';
-import { randomArray } from '../src/sort/utils';
+import { bubbleSort, heapSort, insertionSort, mergeSort, quickSort, radixSort, selectionSort } from '../sort';
+import { randomArray } from '../sort/utils';
 
 /** 待排序数组集 */
 let targetArrays: number[][];
