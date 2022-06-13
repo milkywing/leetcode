@@ -10,7 +10,7 @@ describe('优先队列', () => {
   it('优先队列入队', () => {
     enqueueSeries.forEach((item, index) => {
       pq.enqueue(item);
-      expect(pq.peek()).to.equal(peekSeries[index]);
+      expect(pq.top).to.equal(peekSeries[index]);
       expect(pq.size).to.equal(queueSize[index]);
     });
   });

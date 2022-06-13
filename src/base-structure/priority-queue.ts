@@ -16,6 +16,20 @@ export class PriorityQueue<T = number> {
     if (elements) this.enqueue(...elements);
   }
 
+  /** 当前优先值 */
+  public get top(): T | undefined {
+    return this.heap[0];
+  }
+
+  /** 优先队列大小 */
+  public get size(): number {
+    return this.heap.length;
+  }
+
+  public isEmpty(): boolean {
+    return this.heap.length === 0;
+  }
+
   /** 入队 */
   public enqueue(...elements: T[]): void {
     elements.forEach((element) => {
@@ -32,16 +46,6 @@ export class PriorityQueue<T = number> {
     this.heap[0] = this.heap.pop()!;
     this.heapifyDown(0);
     return result;
-  }
-
-  /** 查看当前优先值（不出队） */
-  public peek(): T | undefined {
-    return this.heap[0];
-  }
-
-  /** 优先队列大小 */
-  public get size(): number {
-    return this.heap.length;
   }
 
   /** 向上调整结点维持堆结构 */
