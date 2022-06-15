@@ -91,7 +91,7 @@ export const dijkstra = (start: Node): Map<Node, number> => {
     // 考虑 minN 的每一条关联边
     minNode.edges.forEach((edge) => {
       const toNode = edge.to;
-      const toNodeDistance = distanceMap.get(toNode) || Infinity;
+      const toNodeDistance = distanceMap.get(toNode) ?? Infinity;
       // 如果该边能让当前节点到 toNode 的距离更小，则更新 toNode 的距离
       distanceMap.set(toNode, Math.min(minNodeDistance + edge.weight, toNodeDistance));
     });

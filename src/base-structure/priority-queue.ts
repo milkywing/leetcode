@@ -71,7 +71,7 @@ export class PriorityQueue<T = number> {
 
     // 完全二叉树的特性，若左孩子不存在，则右孩子不存在。该条件用于判断是否有儿子
     while (left < heapSize) {
-      // 交换目标下标
+      // 记录被调整节点及其子节点中最大值的下标
       const right = left + 1;
       let targetIndex = right < heapSize && this.compare(this.heap[right], this.heap[left]) < 0 ? right : left;
       targetIndex = this.compare(this.heap[targetIndex], this.heap[i]) < 0 ? targetIndex : i;
