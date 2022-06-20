@@ -128,3 +128,53 @@ export const BFSTraverseBinaryTree = <T = number>(
     }
   }
 };
+
+/**
+ * morris遍历二叉树，current为当前节点，开始时从根节点出发
+ * 1. 如果 current 无左孩子，current 向右移动
+ * 2. 如果 current 有左孩子，找到左子树上最右的节点 mostRight：
+ *    2.1 如果 mostRight 的右孩子为空（说明此时是第一次来到cur所指向结点），将 mostRight 右孩子指向 current，然后 current 向左移动
+ *    2.2 如果 mostRight 的右孩子指向 current（说明此时是第二次来到cur所指向结点），将 mostRight 的右孩子指向 null，然后 current 向右移动
+ * 3. 重复上述操作，直到 current 指向 null
+ */
+export const morrisTraverseBinaryTree = <T = number>(
+  node: BinaryTreeNode<T> | null,
+  callback: (n: BinaryTreeNode<T>) => void,
+  order = TraverseOrder.PreOrder,
+): void => {
+  if (!node) return;
+
+  // 当前遍历节点
+  let current: BinaryTreeNode<T> | null = node;
+  // 当前遍历节点左子树上最右边的节点
+  let mostRight: BinaryTreeNode<T> | null = null;
+
+  while (current) {
+    // mostRight 从左子树根节点出发，寻找左子树的最右节点（有的话）
+    mostRight = current.left;
+    if (mostRight) {
+      while (mostRight.right && mostRight.right !== current) {
+        mostRight = mostRight.right;
+      }
+
+      if (!mostRight.right) {
+        // mostRight 右孩子为空，说明第一次来到 current 指向的节点
+        mostRight.right = current;
+        // 先序遍历（第一次遍历时处理）
+        if (order === TraverseOrder.PreOrder) callback(current);
+        current = current.left;
+        continue;
+      } else {
+        // mostRight 右孩子指向 current，说明第二次来到 current 指向的节点
+        mostRight.right = null;
+      }
+    } else if (order === TraverseOrder.PreOrder) {
+      // 先序遍历（第一次遍历时处理）
+      callback(current);
+    }
+    // 中序遍历（第二次遍历时处理）
+    if (order === TraverseOrder.InOrder) callback(current);
+    // 没有左子树/第二次来到 current 指向的节点，current 向右移动
+    current = current.right;
+  }
+};

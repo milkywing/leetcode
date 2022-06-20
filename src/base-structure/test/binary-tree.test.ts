@@ -3,6 +3,7 @@ import { createBinaryTreeNode, insertLeft, insertRight } from '../model/node';
 import {
   BFSTraverseBinaryTree,
   inOrderTraverseBinaryTree,
+  morrisTraverseBinaryTree,
   postOrderTraverseBinaryTree,
   preOrderTraverseBinaryTree,
   traverseBinaryTree,
@@ -47,5 +48,17 @@ describe('二叉树遍历', () => {
     const result: number[] = [];
     BFSTraverseBinaryTree(tree, (node) => result.push(node.value));
     expect(result).to.deep.equal([1, 2, 3, 4, 5, 6, 7]);
+  });
+
+  it('morris先序遍历', () => {
+    const result: number[] = [];
+    morrisTraverseBinaryTree(tree, (node) => result.push(node.value), TraverseOrder.PreOrder);
+    expect(result).to.deep.equal(preOrders);
+  });
+
+  it('morris中序遍历', () => {
+    const result: number[] = [];
+    morrisTraverseBinaryTree(tree, (node) => result.push(node.value), TraverseOrder.InOrder);
+    expect(result).to.deep.equal(inOrders);
   });
 });
