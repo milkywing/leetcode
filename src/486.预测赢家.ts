@@ -7,7 +7,7 @@
 // @lc code=start
 function PredictTheWinner(nums: number[]): boolean {
   const length = nums.length;
-  const dp: number[][] = new Array(length).fill(0).map(() => new Array(length).fill(0));
+  const dp: number[][] = Array.from({ length }, () => Array(length).fill(0));
   for (let i = 0; i < length; i++) {
     dp[i][i] = nums[i];
   }
