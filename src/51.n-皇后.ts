@@ -123,7 +123,7 @@ const solveNQueens2Core = (i: number, record: number[], result: string[][]): voi
   }
   // 在第 i 行逐个尝试在合法的列放置皇后
   for (let j = 0; j < record.length; j++) {
-    if (isValid(record, i, j)) {
+    if (isPositionValid(record, i, j)) {
       record[i] = j;
       solveNQueens2Core(i + 1, record, result);
     }
@@ -137,7 +137,7 @@ const generateCase = (record: number[]): string[] => {
   });
 };
 
-const isValid = (record: number[], i: number, j: number): boolean => {
+const isPositionValid = (record: number[], i: number, j: number): boolean => {
   // 考虑已经放置的 [0, i-1] 行皇后，看看是否和当前放置的 i 行皇后冲突
   for (let k = 0; k < i; k++) {
     // 列冲突/对角线冲突

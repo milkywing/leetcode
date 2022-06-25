@@ -3,7 +3,7 @@
  * 请问对于数量 n，谁会赢，两个玩家都很聪明
  */
 
-const winner = (n: number) => {
+export const winner = (n: number) => {
   // baseCase：n 为 0、2 时后手赢；n 为 1、3、4 时先手赢
   if (n < 5) {
     return n === 0 || n === 2 ? '后手' : '先手';
