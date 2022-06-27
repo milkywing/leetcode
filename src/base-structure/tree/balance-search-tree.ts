@@ -46,24 +46,6 @@ abstract class BalanceSearchTree<K = number, V = number> {
   public abstract deleteNode(node: BSTNode<K, V>): void;
 }
 
-/** 左旋操作，右孩子成为新头。在右孩子的右边过长时调用，使新的左子树高度加一 */
-const leftRotate = (node: BSTNode): BSTNode => {
-  const newNode = node.right!;
-  node.right = newNode.left;
-  newNode.left = node;
-
-  return newNode;
-};
-
-/** 右旋操作，左孩子成为新头。在左孩子的左边过长时调用，使新的右子树高度加一  */
-const rightRotate = (node: BSTNode): BSTNode => {
-  const newNode = node.left!;
-  node.left = newNode.right;
-  newNode.right = node;
-
-  return newNode;
-};
-
 /**
  * AVL：破坏平衡性四种情况
  * 1.LL（左孩子左边过长），对头节点执右旋，左孩子成为新头
@@ -77,5 +59,35 @@ class AVLTree<K = number, V = number> extends BalanceSearchTree<K, V> {
     this.compare = compare ?? this.compare;
   }
 
-  // TODO
+  /** 左旋操作，右孩子成为新头。在右孩子的右边过长时调用，使新的左子树高度加一 */
+  private static leftRotate(node: BSTNode): BSTNode {
+    const rightSon = node.right!;
+    node.right = rightSon.left;
+    rightSon.left = node;
+    // 原左子树没有变化，原根节点和原右孩子需要更新高度
+    AVLTree.updateHeight(node);
+    AVLTree.updateHeight(rightSon);
+
+    return rightSon;
+  }
+
+  /** 右旋操作，左孩子成为新头。在左孩子的左边过长时调用，使新的右子树高度加一  */
+  private static rightRotate(node: BSTNode): BSTNode {
+    const leftSon = node.left!;
+    node.left = leftSon.right;
+    leftSon.right = node;
+    // 原右子树没有变化，原根节点和原左孩子需要更新高度
+    AVLTree.updateHeight(node);
+    AVLTree.updateHeight(leftSon);
+
+    return leftSon;
+  }
+
+  /** 更新节点高度 */
+  private static updateHeight(node: BSTNode): void {
+    node.height = Math.max(node.left?.height ?? 0, node.right?.height ?? 0) + 1;
+  }
+
+  /** 维持二叉树的平衡性 */
+  private maintain(node: BSTNode): BSTNode {}
 }

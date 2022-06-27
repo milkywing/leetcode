@@ -30,6 +30,9 @@
       "mocha"
     ]
   },
+  "files": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "coverage",
     "node_modules"

@@ -1,54 +1,52 @@
 /*
- * @lc app=leetcode.cn id=295 lang=typescript
+ * @lc app=leetcode.cn id=692 lang=typescript
  *
- * [295] 数据流的中位数
+ * [692] 前K个高频单词
  */
 
 // @lc code=start
+
+interface HeapItem {
+  word: string;
+  count: number;
+}
+
 /**
- * 维护一个【小顶堆存储比中位数大的数】和【大顶堆存储比中位数小的数】，放入的第一个数放入小顶堆，
- * 每接收一个数 num，若比中位数小，则放入小顶堆，否则放入大顶堆，并维持小顶堆大小比大顶堆大1或相等
- * 取中位数时，小顶堆大小若比大顶堆的大（当奇数时），取小顶堆的堆顶；两堆大小相等（当偶数时），取两堆的堆顶的平均值。
+ * 方案A（本解）：先使用 map 统计各个单词的词频，然后使用大小为 k 的小顶堆维护频率最大的 k 个单词
+ * 方案B：魔改小顶堆，使其支持更新某个节点的频率并自动维持堆结构（可参考堆优化的 dijkstra）
  */
-class MedianFinder {
-  /** 使用一个大顶堆存储比中位数小的数 */
-  private smallerQue = new PriorityQueue<number>([], (a, b) => b - a);
+function topKFrequent(words: string[], k: number): string[] {
+  // 统计词频
+  const map = new Map<string, number>();
+  words.forEach((word) => {
+    map.set(word, (map.get(word) ?? 0) + 1);
+  });
 
-  /** 使用一个小顶堆存储比中位数大的数 */
-  private biggerQue = new PriorityQueue<number>();
-
-  public addNum(num: number): void {
-    const smallerQueSize = this.smallerQue.size;
-    const biggerQueSize = this.biggerQue.size;
-    if (!smallerQueSize && !biggerQueSize) {
-      this.smallerQue.enqueue(num);
-      return;
+  // 小顶堆，根据词频排序，如果词频相同则采用字典序排序
+  const pq = new PriorityQueue<HeapItem>([], (a, b) => {
+    if (a.count === b.count) {
+      return b.word.localeCompare(a.word);
     }
+    return a.count - b.count;
+  });
 
-    // 考虑smaller(1、4)、bigger(8, 10)，中位数为6
-    // 1.若 num 比中位数6小，num 直接放入smaller
-    // 2.若 num 比中位数6大，但比 bigger 中的最小值小，比中位数6小，num 直接放入smaller
-    // 3.若 num 比中位数6大，且比 bigger 中的最小值大，需把 num 放入 bigger，然后把 bigger 中的最小值放入 smaller
-    // 即可以先将 num 放入 bigger，再将 bigger 中的最小值放入 smaller
-    if (smallerQueSize === biggerQueSize) {
-      this.biggerQue.enqueue(num);
-      this.smallerQue.enqueue(this.biggerQue.dequeue()!);
-    } else {
-      // 考虑smaller(1、3)、bigger(5)，中位数为3
-      // 1.若 num 比中位数3大，num 直接放入 bigger
-      // 2.若 num 比中位数3小，需把 num 放入 smaller，然后把 smaller 中的最大值放入 bigger
-      // 即可以先将 num 放入 smaller，再将 smaller 中的最大值放入 bigger
-      this.smallerQue.enqueue(num);
-      this.biggerQue.enqueue(this.smallerQue.dequeue()!);
+  map.forEach((count, word) => {
+    // 维护大小为 k 的小顶堆
+    pq.enqueue({ word, count });
+    if (pq.size > k) {
+      pq.dequeue();
     }
+  });
+
+  const result: string[] = [];
+
+  // 最后堆中的值即是题目所求 topk
+  while (pq.size) {
+    result.push(pq.dequeue()!.word);
   }
 
-  public findMedian(): number {
-    if (this.smallerQue.size === this.biggerQue.size) {
-      return (this.smallerQue.top! + this.biggerQue.top!) / 2;
-    }
-    return this.smallerQue.top!;
-  }
+  // 出堆是频率小和字典序大优先，因此这里需要反序
+  return result.reverse();
 }
 
 /** 基于堆实现的优先队列（默认小优先） */
@@ -139,11 +137,4 @@ class PriorityQueue<T = number> {
     }
   }
 }
-
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * var obj = new MedianFinder()
- * obj.addNum(num)
- * var param_2 = obj.findMedian()
- */
 // @lc code=end
