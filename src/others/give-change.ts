@@ -1,6 +1,11 @@
 /**
- * 给定一组面值的货币（不限张数）和一个值 n，求 n 找零方法数：
- * [0..index-1] 中的面值为已经选择过，现在开始选择使用 arr[index] 面值
+ * 【问题】给定一组面值的货币（不限张数）和一个值 n，求 n 找零方法数
+ */
+
+/**
+ * 从左到右尝试模型：
+ * index 表示当前正在考虑是否使用面值的索引，还剩 [index+1..length-1] 范围的面值没考虑，rest 表示当前剩余找零，
+ * 函数返回基于 [index..length-1] 范围内面值， rest 的找零方法数
  */
 export const giveChange = (arr: number[], index: number, rest: number): number => {
   // 如果所有面值都已经选择，判断找零是否完成

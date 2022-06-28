@@ -1,10 +1,14 @@
-/** 给定一堆带面值的硬币（可能重复），和一个值，求组成这个值的最小硬币数 */
+/**
+ * 【问题】给定一堆带面值的硬币（可能重复）coins，和一个值 amount，求组成这个值的最小硬币数
+ */
 export const minCoinNum = (coins: number[], amount: number): number => {
   return minCoinNumCore(coins, 0, amount);
 };
 
 /**
- * [0..index-1] 上的硬币已做出选择（已确定要或不要），rest 表示还剩多少值需要凑出来，现在对于第 index 个硬币，做出要或不要的选择
+ * 从左到右尝试模型：
+ * index 表示当前正在考虑是否使用面值的索引，还剩 [index+1..length-1] 范围的面值没考虑，rest 表示当要达到 amount 还差的值
+ * 函数返回基于 [index..length-1] 范围内面值， 还差 rest 情况下使用的最小硬币数
  */
 const minCoinNumCore = (coins: number[], index: number, rest: number): number => {
   // baseCase1：如果已经凑出来了，则不需要硬币了，提前终止

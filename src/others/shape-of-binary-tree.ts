@@ -1,4 +1,6 @@
-/** 给定节点数 n，求能组成多少种不同的二叉树 */
+/**
+ * 【问题】给定节点数 n，求能组成多少种不同的二叉树
+ */
 export const shapeOfBinaryTree = (n: number): number => {
   // baseCase
   if (n < 0) return 0;

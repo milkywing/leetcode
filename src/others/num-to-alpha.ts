@@ -1,5 +1,5 @@
 /**
- * 有映射关系1-a，2-b...26-z，给定一个数字字符串，求能对应出多少种字母字符串。
+ * 【问题】现规定有映射关系1-a，2-b...26-z，给定一个数字字符串，求能对应出多少种字母字符串，
  * 如 111 可以对应 aaa、ka 两种
  */
 
@@ -8,7 +8,9 @@ export const numToAlpha = (numString: string): number => {
 };
 
 /**
- * 从左到右尝试递归，[0..index-1] 区域已做出选择，现在对 index 位置做出选择，决定是是将 index 单独对应还是将 index、index+1 一起对应
+ * 从左到右尝试模型：
+ * index 表示当前正在对 index 位置做出选择，是决定是是将 index 单独对应还是将 index、index+1 一起对应
+ * 函数返回基于 [index..length-1] 范围的字符串，其对应字母字符串的个数
  */
 const numToAlphaCore = (str: string, index: number): number => {
   if (index === str.length) return 1;
