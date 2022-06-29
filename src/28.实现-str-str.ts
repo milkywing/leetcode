@@ -1,29 +1,22 @@
-/**
- * 【引导1】求一个字符串，最大公共前后缀的长度和对应子串（不包含整体），称他们为 maxMatchLength 和 maxMatchSubstring
- * 比如 abbabb 有最大匹配长度为3，此时前缀abb，后缀abb
+/*
+ * @lc app=leetcode.cn id=28 lang=typescript
+ *
+ * [28] 实现 strStr()
  */
 
-/**
- * 【引导2】求一个字符串序列中，每个字符前面字符串 maxMatchLength，以数组 nextArr 形式存储，
- * nextArr[i] 表示第 i 个字符的前面字符串的最大匹配长度，且规定 nextArr[0] = -1
- * 比如对于字符串序列 aabaab 有 nextArr = [-1, 0, 1, 0, 1, 2]
- */
+// @lc code=start
+/** kmp 算法实现，可以参考 kmp.ts */
+function strStr(haystack: string, needle: string): number {
+  const [haystackLength, needleLength] = [haystack.length, needle.length];
+  if (!needleLength) return 0;
+  if (!haystackLength || haystackLength < needleLength) return -1;
 
-/** 返回匹配起点，如果没找到，返回 -1 */
-export const kmp = (string: string, pattern: string): number => {
-  const stringLength = string.length;
-  const patternLength = pattern.length;
-
-  if (!patternLength) return 0;
-
-  if (!stringLength || patternLength > stringLength) return -1;
-
-  const nextArr = getNextArr(pattern);
+  const nextArr = getNextArr(needle);
+  let [p1, p2] = [0, 0];
 
   // p1 是遍历 string 的指针，p2 是遍历 pattern 的指针
-  let [p1, p2] = [0, 0];
-  while (p1 < stringLength && p2 < patternLength) {
-    if (string[p1] === pattern[p2]) {
+  while (p1 < haystackLength && p2 < needleLength) {
+    if (haystack[p1] === needle[p2]) {
       // 当前字符匹配成功，两个共同前进
       p1++;
       p2++;
@@ -37,10 +30,8 @@ export const kmp = (string: string, pattern: string): number => {
     }
   }
 
-  // p2 越界，说明匹配成功，返回匹配起点，
-  // p1 越界（p2没越界），说明匹配失败，返回 -1
-  return p2 === patternLength ? p1 - patternLength : -1;
-};
+  return p2 === needleLength ? p1 - needleLength : -1;
+}
 
 /** 构造 nextArr */
 const getNextArr = (pattern: string): number[] => {
@@ -78,3 +69,4 @@ const getNextArr = (pattern: string): number[] => {
 
   return nextArr;
 };
+// @lc code=end
