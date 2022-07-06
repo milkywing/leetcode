@@ -5,7 +5,7 @@
 import { rangeFromZero, swap } from './utils';
 
 /** 向上调整位置 i 的节点，维持大顶堆 */
-const heapifyUp = (arr: number[], i: number) => {
+const shiftUp = (arr: number[], i: number) => {
   // index 为被调整节点下标
   let index = i;
 
@@ -18,7 +18,7 @@ const heapifyUp = (arr: number[], i: number) => {
 };
 
 /** 向下调整位置 i 的节点，维持大顶堆 */
-const heapifyDown = (arr: number[], i: number, heapSize: number) => {
+const shiftDown = (arr: number[], i: number, heapSize: number) => {
   // index 为被调整节点下标
   let index = i;
   // 当前被调整节点的左孩子下标
@@ -48,11 +48,11 @@ export const heapSort = (arr: number[]) => {
   const arrLength = arr.length;
 
   // 构建大顶堆方案1：扫描数组，把当前值作二叉树的尾节点，并对其进行向上调整，构造大顶堆
-  rangeFromZero(arrLength).forEach((i) => heapifyUp(arr, i));
+  rangeFromZero(arrLength).forEach((i) => shiftUp(arr, i));
 
   // 构建大顶堆方案2：对当前二叉树从下到上，从右到左进行对每个节点进行向下调整，构造大顶堆
   // for (let i = arrLength - 1; i >= 0; i--) {
-  //   heapifyDown(arr, i, arrLength);
+  //   shiftDown(arr, i, arrLength);
   // }
 
   // 堆大小决定了当前可视堆
@@ -64,7 +64,7 @@ export const heapSort = (arr: number[]) => {
     swap(arr, 0, heapSize - 1);
     heapSize--;
     // 对被顶到堆顶的新节点（原堆的最后一个元素）进行向下调整，维持大顶堆
-    heapifyDown(arr, 0, heapSize);
+    shiftDown(arr, 0, heapSize);
   }
 
   return arr;

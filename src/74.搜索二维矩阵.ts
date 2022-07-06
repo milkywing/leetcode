@@ -10,7 +10,7 @@ function searchMatrix(matrix: number[][], target: number): boolean {
   const rowNum = matrix.length;
   const colNum = matrix[0].length;
 
-  // 通过二分法找到最后一个小于目标值的行
+  // 通过二分法找到最后一个小于等于目标值的行
   let [upper, lower] = [0, rowNum - 1];
   while (upper < lower) {
     const mid = Math.floor((upper + lower + 1) / 2);
