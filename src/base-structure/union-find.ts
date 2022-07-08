@@ -21,8 +21,14 @@ export class UnionFind<T = number> {
     });
   }
 
+  /** 连通分量个数 */
   public getCount(): number {
     return this.count;
+  }
+
+  /** 最大连通分量大小 */
+  public getLargestComponentSize(): number {
+    return Math.max(...this.sizes.values());
   }
 
   /** 连通节点 p 和节点 q 所属的连通分量 */
@@ -30,7 +36,7 @@ export class UnionFind<T = number> {
     // 如果两个节点有共同的根节点，说明他们在同一个连通分量，跳过合并操作
     const pRoot = this.find(p);
     const qRoot = this.find(q);
-    if (pRoot === qRoot) return;
+    if (!pRoot || !qRoot || pRoot === qRoot) return;
 
     const pRootSize = this.sizes.get(pRoot)!;
     const qRootSize = this.sizes.get(qRoot)!;
@@ -49,13 +55,16 @@ export class UnionFind<T = number> {
 
   /** 判断两个节点的连通性 */
   public connected(p: T, q: T): boolean {
-    return this.find(p) === this.find(q);
+    const pRoot = this.find(p);
+    const qRoot = this.find(q);
+    if (!pRoot || !qRoot) return false;
+    return pRoot === qRoot;
   }
 
   /** 返回节点 p 所在树的根节点 */
-  private find(p: T): T {
+  private find(p: T): T | null {
     const parentP = this.parents.get(p);
-    if (parentP === undefined) throw Error(`${p} is not in the set`);
+    if (parentP === undefined) return null;
     let curP = p;
 
     while (curP !== this.parents.get(p)) {
