@@ -213,16 +213,19 @@ export class MyPromise<T = any> {
     this.callbacks = [];
   }
 
-  /** 处理 resolve 逻辑 */
+  /** 处理 resolve 逻辑，情况五选一（可以用职责链优化） */
   private resolvePromise(value: any, onFulfilled: OnFulfilled<T>, onRejected: OnRejected): void {
+    // 【1】resolveValue 不能是自身，否则走 onRejected 逻辑
     if (value === this) {
       onRejected!(new TypeError('Can not fulfill promise with itself'));
       return;
     }
+    // 【2】如果 resolveValue 是另外一个 promise，直接沿用该 promise 的状态和 result
     if (value instanceof MyPromise) {
       value.then(onFulfilled, onRejected);
       return;
     }
+    // 【3】如果 resolveValue 是 Thenable，取其 then 方法封为新的 promise 返回
     if (isThenable(value)) {
       try {
         const { then } = value;
@@ -231,10 +234,12 @@ export class MyPromise<T = any> {
           return;
         }
       } catch (error) {
+        // 【4】执行拋错，走 onRejected 逻辑
         onRejected!(error);
         return;
       }
     }
+    // 【5】其他情况一切正常，走 onFulfilled 逻辑
     onFulfilled!(value);
   }
 }
