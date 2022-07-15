@@ -10,7 +10,7 @@ export const kruskal = (graph: Graph): Edge[] => {
   // 使用图节点初始化并查集
   const uf = new UnionFind([...graph.nodes.values()]);
   // 使用小顶堆来存储边
-  const pq = new PriorityQueue<Edge>([...graph.edges.values()]);
+  const pq = new PriorityQueue<Edge>([...graph.edges.values()], (e1, e2) => e1.weight - e2.weight);
 
   const res: Edge[] = [];
 
@@ -34,7 +34,7 @@ export const kruskal = (graph: Graph): Edge[] => {
  */
 export const prim = (graph: Graph): Edge[] => {
   // 使用小顶堆来存储解锁的边
-  const pq = new PriorityQueue<Edge>([]);
+  const pq = new PriorityQueue<Edge>([], (e1, e2) => e1.weight - e2.weight);
   // 已经解锁的点
   const unlockNodes: Node[] = [];
 
