@@ -5,12 +5,10 @@
  */
 
 // @lc code=start
+let result: number[][] = [];
 function permute(nums: number[]): number[][] {
-  if (nums.length === 0) return [];
-
-  const result: number[][] = [];
-  permuteCore(nums, 0, result);
-
+  result = [];
+  permuteCore(nums, 0);
   return result;
 }
 
@@ -21,23 +19,18 @@ function permute(nums: number[]): number[][] {
  * 2. 按上面的思想求 [i..nums.length-1] 区域的组合，从该区域中选择一个元素作为 i 位置的选择然后转换为求 [i+1..nums.length-1] 区域的组合
  * 3. 重复上述过程，直到 i === nums.length，即所有元素都已经被选择过
  */
-const permuteCore = (nums: number[], i: number, result: number[][]): void => {
-  // 如果 i === nums.length，即所有元素都已经被选择过，的到一个组合保存起来
+const permuteCore = (nums: number[], i: number): void => {
+  // 如果 i === nums.length，即所有元素都已经被选择过，生成一个组合
   if (i === nums.length) {
     result.push(nums.slice());
     return;
   }
 
-  // 用于记录 i 位置放过的值
-  const numsHasTried: Set<number> = new Set();
   for (let j = i; j < nums.length; j++) {
-    // 如果 j 位置的值已经 在 i 位置被放过了，舍弃重复组合
-    if (numsHasTried.has(nums[j])) continue;
-    numsHasTried.add(nums[j]);
     // 选择 i 位置的值
     [nums[i], nums[j]] = [nums[j], nums[i]];
     // 求 [i+1..nums.length-1] 区域的组合
-    permuteCore(nums, i + 1, result);
+    permuteCore(nums, i + 1);
     // 恢复 i、j 位置原来的值
     [nums[i], nums[j]] = [nums[j], nums[i]];
   }
