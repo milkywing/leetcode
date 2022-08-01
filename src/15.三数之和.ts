@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=15 lang=typescript
- *
+ * https://leetcode.cn/problems/3sum/description/
  * [15] 三数之和
  */
 

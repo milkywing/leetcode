@@ -1,13 +1,13 @@
 /*
  * @lc app=leetcode.cn id=5 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-palindromic-substring/solution/
  * [5] 最长回文子串
  */
 
 // @lc code=start
 
 /**
- * 方案A：中心扩展法
+ * 方案A（本解）：中心扩展法
  * 方案B：manacher算法
  */
 function longestPalindrome(s: string): string {
@@ -52,6 +52,6 @@ function longestPalindrome(s: string): string {
     len = 1;
   }
 
-  return s.substring(maxStartIndex, maxStartIndex + maxLen);
+  return s.slice(maxStartIndex, maxStartIndex + maxLen);
 }
 // @lc code=end

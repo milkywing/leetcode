@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=6 lang=typescript
- *
+ * https://leetcode.cn/problems/zigzag-conversion/description/
  * [6] Z 字形变换
  */
 

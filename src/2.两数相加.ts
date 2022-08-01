@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=2 lang=typescript
- *
+ * https://leetcode.cn/problems/add-two-numbers/description/
  * [2] 两数相加
  */
 
@@ -16,9 +16,9 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
   while (p1 || p2) {
     // 对于已经遍历到尾部的指针，认为其值为 0
     const sum = (p1 ? p1.val : 0) + (p2 ? p2.val : 0) + carry;
-    // 超过 10，进位
+    // 当前位和超过 10，产生进位
     carry = Math.trunc(sum / 10);
-
+    // 生成当前位
     curr.next = new ListNode(sum % 10);
     curr = curr.next;
 

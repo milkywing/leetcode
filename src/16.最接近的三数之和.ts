@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=16 lang=typescript
- *
+ * https://leetcode.cn/problems/3sum-closest/description/
  * [16] 最接近的三数之和
  */
 

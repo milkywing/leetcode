@@ -27,30 +27,30 @@ export class PriorityQueue<T = number> {
   }
 
   public isEmpty(): boolean {
-    return this.heap.length === 0;
+    return this.size === 0;
   }
 
   /** 入队 */
   public enqueue(...elements: T[]): void {
     elements.forEach((element) => {
       this.heap.push(element);
-      this.heapifyUp(this.heap.length - 1);
+      this.shiftUp(this.size - 1);
     });
   }
 
   /** 出队 */
   public dequeue(): T | undefined {
-    if (this.heap.length === 0) return undefined;
-    if (this.heap.length === 1) return this.heap.pop();
+    if (this.size === 0) return undefined;
+    if (this.size === 1) return this.heap.pop();
     const result = this.heap[0];
     this.heap[0] = this.heap.pop()!;
-    this.heapifyDown(0);
+    this.shiftDown(0);
     return result;
   }
 
   /** 向上调整结点维持堆结构 */
-  private heapifyUp(index: number): void {
-    if (index <= 0 || index >= this.heap.length) return;
+  private shiftUp(index: number): void {
+    if (index <= 0 || index >= this.size) return;
     let i = index;
     let parentI = (index - 1) >> 1;
 
@@ -62,9 +62,9 @@ export class PriorityQueue<T = number> {
   }
 
   /** 向下调整结点维持堆结构 */
-  private heapifyDown(index: number): void {
-    const heapSize = this.heap.length;
-    if (index < 0 || index >= this.heap.length) return;
+  private shiftDown(index: number): void {
+    const heapSize = this.size;
+    if (index < 0 || index >= heapSize) return;
     let i = index;
     // 当前被调整节点的左孩子下标
     let left = (i << 1) + 1;

@@ -5,6 +5,7 @@ import {
   inOrderTraverseBinaryTree,
   morrisTraverseBinaryTree,
   postOrderTraverseBinaryTree,
+  postOrderTraverseBinaryTreeWithTwoStack,
   preOrderTraverseBinaryTree,
   traverseBinaryTree,
   TraverseOrder,
@@ -41,6 +42,12 @@ describe('二叉树遍历', () => {
   it('后序遍历', () => {
     const result: number[] = [];
     postOrderTraverseBinaryTree(tree, (node) => result.push(node.value));
+    expect(result).to.deep.equal(postOrders);
+  });
+
+  it('后序遍历（双栈实现）', () => {
+    const result: number[] = [];
+    postOrderTraverseBinaryTreeWithTwoStack(tree, (node) => result.push(node.value));
     expect(result).to.deep.equal(postOrders);
   });
 

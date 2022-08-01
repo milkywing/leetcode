@@ -8,12 +8,13 @@ import { rangeFromZero, swap } from './utils';
 const shiftUp = (arr: number[], i: number) => {
   // index 为被调整节点下标
   let index = i;
+  let parentIndex = (index - 1) >>> 1;
 
   // 被调整的节点只要小于父节点，就一直跟父节点交换（向上调整）
-  while (arr[(index - 1) >> 1] < arr[index]) {
-    const parentIndex = (index - 1) >> 1;
+  while (arr[parentIndex] < arr[index]) {
     swap(arr, parentIndex, index);
     index = parentIndex;
+    parentIndex = (index - 1) >>> 1;
   }
 };
 

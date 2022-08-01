@@ -63,25 +63,65 @@ export const inOrderTraverseBinaryTree = <T = number>(
   let p: BinaryTreeNode<T> | null = node;
   // 核心：按左边界分解树
   while (p || stack.length) {
-    if (p) {
-      // 把当前节点压栈，只要当前节点有左孩子，就一直将左孩子压栈（左边界入栈）
+    // 把当前节点压栈，只要当前节点有左孩子，就一直将左孩子压栈（左边界入栈）
+    while (p) {
       stack.push(p);
       p = p.left;
-    } else {
-      // 左边界到头了，开始弹出并处理节点，对该节点的右孩子（右树）重复上述逻辑
-      p = stack.pop()!;
-      // 中序遍历（左、头、右）
-      callback(p);
-      p = p.right;
     }
+
+    // 左边界到头了，开始弹出并处理节点，对该节点的右孩子（右树）重复上述逻辑
+    const curNode = stack.pop()!;
+    // 中序遍历（左、头、右）
+    callback(curNode);
+    p = curNode.right;
+  }
+};
+
+/** 通过魔改中序遍历（左、头、右）实现后序遍历（左、右、头）二叉树节点 */
+export const postOrderTraverseBinaryTree = <T = number>(
+  node: BinaryTreeNode<T> | null,
+  callback: (n: BinaryTreeNode<T>) => void,
+): void => {
+  if (!node) return;
+
+  const stack: BinaryTreeNode<T>[] = [];
+  let p: BinaryTreeNode<T> | null = node;
+  let preNode: BinaryTreeNode<T> | null = null;
+
+  // 主要思想：
+  // 由于在某颗子树访问完成以后，接着就要回溯到其父节点去
+  // 因此可以用prev来记录访问历史，在回溯到父节点时，可以由此来判断，上一个访问的节点是否为右子树
+  while (p || stack.length) {
+    while (p) {
+      stack.push(p);
+      p = p.left;
+    }
+    // 从栈中弹出的元素，左子树一定是访问完了的
+    const curNode = stack.pop()!;
+
+    // =====================和中序遍历差异部分=====================
+
+    if (!curNode.right || preNode === curNode.right) {
+      // 后序遍历（左、右、头）
+      callback(curNode);
+      // 更新历史访问记录，这样回溯的时候父节点可以由此判断右子树是否访问完成
+      preNode = curNode;
+      p = null;
+    } else {
+      // 如果右子树没有被访问，那么将当前节点重新压回栈，先访问右子树
+      stack.push(curNode);
+      p = curNode.right;
+    }
+
+    // =====================和中序遍历差异部分=====================
   }
 };
 
 /**
- * 通过双栈实现后序遍历（左、右、头）二叉树节点
- * 方案：考虑前序遍历的变种（头、右、左），反过来就是后序遍历（左、右、头），这个反序的操作可以通过另一个栈实现
+ * 通过双栈实现后序遍历（左、右、头）二叉树节点，
+ * 考虑前序遍历的变种（头、右、左），反过来就是后序遍历（左、右、头），这个反序的操作可以通过另一个栈实现
  */
-export const postOrderTraverseBinaryTree = <T = number>(
+export const postOrderTraverseBinaryTreeWithTwoStack = <T = number>(
   node: BinaryTreeNode<T> | null,
   callback: (n: BinaryTreeNode<T>) => void,
 ): void => {

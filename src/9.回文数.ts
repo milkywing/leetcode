@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=9 lang=typescript
- *
+ * https://leetcode.cn/problems/palindrome-number/description/
  * [9] 回文数
  */
 

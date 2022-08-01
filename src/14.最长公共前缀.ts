@@ -1,12 +1,29 @@
 /*
  * @lc app=leetcode.cn id=14 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-common-prefix/description/
  * [14] 最长公共前缀
  */
 
 // @lc code=start
-/** 求两个字符串的公共前缀+分治即可 */
+/**
+ * 方案A（本解）：横向两两扫描
+ * 方案B：分治扫描
+ */
 function longestCommonPrefix(strs: string[]): string {
+  const length = strs.length;
+  if (length === 1) return strs[0];
+
+  let prefix = strs[0];
+  for (let i = 1; i < length; i++) {
+    prefix = commonPrefix(prefix, strs[i]);
+    // 如果当前公共前缀归空了，直接可以提前终止了
+    if (!prefix) break;
+  }
+
+  return prefix;
+}
+
+const longestCommonPrefixB = (strs: string): string => {
   const length = strs.length;
   if (length === 1) return strs[0];
 
@@ -14,8 +31,8 @@ function longestCommonPrefix(strs: string[]): string {
   const leftArea = strs.slice(0, mid);
   const rightArea = strs.slice(mid);
 
-  return commonPrefix(longestCommonPrefix(leftArea), longestCommonPrefix(rightArea));
-}
+  return commonPrefix(longestCommonPrefixB(leftArea), longestCommonPrefixB(rightArea));
+};
 
 /** 求两个字符串的公共前缀 */
 const commonPrefix = (str1: string, str2: string): string => {

@@ -1,12 +1,13 @@
 /*
  * @lc app=leetcode.cn id=4 lang=typescript
- *
+ * https://leetcode.cn/problems/median-of-two-sorted-arrays/description/
  * [4] 寻找两个正序数组的中位数
  */
 
 // @lc code=start
 /**
- * 方案A：对于长度和为 len 的两个数组，求中位数的过程可以转化为第 k 小的数（当长度和为奇数，k = (len+1)/2；当长度和为偶数，k1 = len/2, k2 = len/2 +1）
+ * 方案A（本解）：对于长度和为 len 的两个数组，求中位数的过程可以转化为第 k 小的数（当长度和为奇数，k = (len+1)/2；当长度和为偶数，k1 = len/2, k2 = len/2 +1）
+ * 方案B：将两个数组合成为整体有序数组，然后直接求中位数
  */
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
   const sumLength = nums1.length + nums2.length;
@@ -51,8 +52,9 @@ const getKthMin = (nums1: number[], nums2: number[], k: number): number => {
       }
       checkNum += step;
     } else if (p1 + step - 1 >= length1) {
-      // 【2】加上 step 后 nums1 会越界，如果 nums1 是小的那个，排除剩下值
-      if (nums1[nums1.length - 1] < nums2[p2 + step - 1]) {
+      // 【2】加上 step 后 nums1 会越界
+      if (nums1[length1 - 1] < nums2[p2 + step - 1]) {
+        // 如果 nums1 是小的那个，排除剩下值
         p1 = length1;
         checkNum += length1 - p1;
       } else {
@@ -60,10 +62,11 @@ const getKthMin = (nums1: number[], nums2: number[], k: number): number => {
         checkNum += step;
       }
     } else if (nums1[p1 + step - 1] < nums2[length2 - 1]) {
-      // 【3】加上 step 后 nums2 会越界，如果 nums2 是小的那个，排除剩下值
+      // 【3】加上 step 后 nums2 会越界，
       p1 += step;
       checkNum += step;
     } else {
+      // 如果 nums2 是小的那个，排除剩下值
       p2 = length2;
       checkNum += length2 - p2;
     }

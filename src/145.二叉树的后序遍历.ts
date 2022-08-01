@@ -41,7 +41,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
       preNode = curNode;
       p = null;
     } else {
-      // 如果右子树没有被访问，那么将当前节点压栈，访问右子树
+      // 如果右子树没有被访问，那么将当前节点重新压回栈，先访问右子树
       stack.push(curNode);
       p = curNode.right;
     }
