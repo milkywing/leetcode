@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=23 lang=typescript
- *
+ * https://leetcode.cn/problems/merge-k-sorted-lists/description/
  * [23] 合并K个升序链表
  */
 
@@ -20,6 +20,7 @@ function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   return mergeTwoLists(mergeKLists(leftArea), mergeKLists(rightArea));
 }
 
+/** 有序链表合并操作，参考【21.合并两个有序链表】 */
 const mergeTwoLists = (list1: ListNode | null, list2: ListNode | null): ListNode | null => {
   const dummyHead = new ListNode(0);
   let curr = dummyHead;

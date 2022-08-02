@@ -1,13 +1,17 @@
 /*
  * @lc app=leetcode.cn id=21 lang=typescript
- *
+ * https://leetcode.cn/problems/merge-two-sorted-lists/description/
  * [21] 合并两个有序链表
  */
 
 import { ListNode } from './model/node';
 
 // @lc code=start
-/** 迭代法 */
+
+/**
+ * 方案A（本解）：迭代
+ * 方案B：递归
+ */
 function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   // 创建一个新的头节点
   const preHead = new ListNode(Number.NEGATIVE_INFINITY);
@@ -32,17 +36,18 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
 
   return preHead.next;
 }
-// @lc code=end
 
-/** 递归法，很好理解 */
-function mergeTwoLists2(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+function mergeTwoListsB(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   if (!list1 || !list2) {
     return list1 || list2;
   }
+  // 当前两个链表中取一个头小的头，然后对两条链的剩下区域进行递归
   if (list1.val < list2.val) {
-    list1.next = mergeTwoLists2(list1.next, list2);
+    list1.next = mergeTwoListsB(list1.next, list2);
     return list1;
   }
-  list2.next = mergeTwoLists2(list1, list2.next);
+  list2.next = mergeTwoListsB(list1, list2.next);
   return list2;
 }
+
+// @lc code=end

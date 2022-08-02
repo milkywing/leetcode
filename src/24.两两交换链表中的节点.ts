@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=24 lang=typescript
- *
+ * https://leetcode.cn/problems/swap-nodes-in-pairs/description/
  * [24] 两两交换链表中的节点
  */
 

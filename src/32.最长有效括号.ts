@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=32 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-valid-parentheses/description/
  * [32] 最长有效括号
  */
 

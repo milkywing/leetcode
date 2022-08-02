@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=35 lang=typescript
- *
+ * https://leetcode.cn/problems/search-insert-position/description/
  * [35] 搜索插入位置
  */
 

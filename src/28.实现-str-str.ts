@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=28 lang=typescript
- *
+ * https://leetcode.cn/problems/implement-strstr/description/
  * [28] 实现 strStr()
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=34 lang=typescript
- *
+ * https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/
  * [34] 在排序数组中查找元素的第一个和最后一个位置
  */
 
@@ -29,7 +29,7 @@ function searchRange(nums: number[], target: number): number[] {
   if (nums[leftIndex] !== target) return [-1, -1];
 
   // 找到 target 的右边界 rightIndex，即第一个大于 target 的位置 - 1
-  [left, right] = [0, nums.length - 1];
+  right = nums.length - 1;
   while (left <= right) {
     const mid = (left + right) >> 1;
     if (nums[mid] <= target) {
