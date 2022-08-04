@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=39 lang=typescript
- *
+ * https://leetcode.cn/problems/combination-sum/description/
  * [39] 组合总和
  */
 

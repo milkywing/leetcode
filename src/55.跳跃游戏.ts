@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=55 lang=typescript
- *
+ * https://leetcode.cn/problems/jump-game/description/
  * [55] 跳跃游戏
  */
 

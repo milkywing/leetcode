@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=47 lang=typescript
- *
+ * https://leetcode.cn/problems/permutations-ii/description/
  * [47] 全排列 II
  */
 

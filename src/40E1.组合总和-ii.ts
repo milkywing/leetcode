@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=40 lang=typescript
- *
+ * https://leetcode.cn/problems/combination-sum-ii/description/
  * [40] 组合总和 II
  */
 

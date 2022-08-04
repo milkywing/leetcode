@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=54 lang=typescript
- *
+ * https://leetcode.cn/problems/spiral-matrix/description/
  * [54] 螺旋矩阵
  */
 
@@ -25,7 +25,7 @@ function spiralOrder(matrix: number[][]): number[] {
       }
       break;
     }
-    // 两点是同一列
+    // 两点是同一行
     if (topLeftY === bottomRightY) {
       for (let x = topLeftX; x <= bottomRightX; x++) {
         result.push(matrix[topLeftY][x]);

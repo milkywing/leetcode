@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=42 lang=typescript
- *
+ * https://leetcode.cn/problems/trapping-rain-water/description/
  * [42] 接雨水
  */
 

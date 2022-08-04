@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=51 lang=typescript
- *
+ * https://leetcode.cn/problems/n-queens/description/
  * [51] N 皇后
  */
 

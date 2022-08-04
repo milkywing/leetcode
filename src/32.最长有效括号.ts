@@ -34,4 +34,30 @@ function longestValidParentheses(str: string): number {
 
   return result;
 }
+
+const longestValidParenthesesB = (str: string): number => {
+  // 始终让栈底记录「最后一个没有被匹配的右括号的下标」
+  const stack: number[] = [-1];
+  let i = 0;
+  let result = 0;
+
+  while (i < str.length) {
+    if (str[i] === '(') {
+      stack.push(i);
+    } else {
+      // 遇到右括号，尝试弹出左括号匹配
+      stack.pop();
+      // 如果发现弹出后栈为空，说明当前右括号没有找到对应的左括号匹配，放到栈底中
+      if (!stack.length) {
+        stack.push(i);
+      } else {
+        // 正常匹配流程，计算当前有效字符串长度
+        result = Math.max(result, i - stack[stack.length - 1]);
+      }
+    }
+    i++;
+  }
+
+  return result;
+};
 // @lc code=end
