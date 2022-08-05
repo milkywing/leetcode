@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=70 lang=typescript
- *
+ * https://leetcode.cn/problems/climbing-stairs/description/
  * [70] 爬楼梯
  */
 

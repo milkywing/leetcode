@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=112 lang=typescript
- *
+ * https://leetcode.cn/problems/path-sum/description/
  * [112] 路径总和
  */
 

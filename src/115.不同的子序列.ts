@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=115 lang=typescript
- *
+ * https://leetcode.cn/problems/distinct-subsequences/description/
  * [115] 不同的子序列
  */
 

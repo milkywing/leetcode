@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=145 lang=typescript
- *
+ * https://leetcode.cn/problems/binary-tree-postorder-traversal/description/
  * [145] 二叉树的后序遍历
  */
 

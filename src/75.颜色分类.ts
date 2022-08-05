@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=75 lang=typescript
- *
+ * https://leetcode.cn/problems/sort-colors/description/
  * [75] 颜色分类
  */
 

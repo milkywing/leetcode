@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=124 lang=typescript
- *
+ * https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/
  * [124] 二叉树中的最大路径和
  */
 

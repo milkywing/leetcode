@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=77 lang=typescript
- *
+ * https://leetcode.cn/problems/combinations/description/
  * [77] 组合
  */
 

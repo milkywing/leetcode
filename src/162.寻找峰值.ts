@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=162 lang=typescript
- *
+ * https://leetcode.cn/problems/find-peak-element/description/
  * [162] 寻找峰值
  */
 

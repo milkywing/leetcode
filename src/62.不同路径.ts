@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=62 lang=typescript
- *
+ * https://leetcode.cn/problems/unique-paths/description/
  * [62] 不同路径
  */
 
@@ -24,7 +24,7 @@ function uniquePaths(m: number, n: number): number {
 /** 递归版本，从(row,col)出发，前往(m-1,n-1)的走法数量 */
 const uniquePathsCore = (m: number, n: number, row: number, col: number): number => {
   if (row >= m || col >= n) return 0;
-  if (row === m - 1 && col === n - 1) return 1;
+  if (row === m - 1 || col === n - 1) return 1;
 
   return uniquePathsCore(m, n, row + 1, col) + uniquePathsCore(m, n, row, col + 1);
 };

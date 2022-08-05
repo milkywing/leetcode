@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=191 lang=typescript
- *
+ * https://leetcode.cn/problems/number-of-1-bits/description/
  * [191] 位1的个数
  */
 

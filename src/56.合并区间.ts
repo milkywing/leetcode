@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=56 lang=typescript
- *
+ * https://leetcode.cn/problems/merge-intervals/description/
  * [56] 合并区间
  */
 
@@ -13,9 +13,8 @@ function merge(intervals: number[][]): number[][] {
   const length = intervals.length;
   if (length < 2) return intervals;
 
-  // 区间起点升序排序优先，区间终点升序排序次之
+  // 区间起点升序排序
   intervals.sort((a, b) => {
-    if (a[0] === b[0]) return a[1] - b[1];
     return a[0] - b[0];
   });
 

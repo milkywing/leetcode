@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=114 lang=typescript
- *
+ * https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/
  * [114] 二叉树展开为链表
  */
 

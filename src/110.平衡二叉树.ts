@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=110 lang=typescript
- *
+ * https://leetcode.cn/problems/balanced-binary-tree/description/
  * [110] 平衡二叉树
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=74 lang=typescript
- *
+ * https://leetcode.cn/problems/search-a-2d-matrix/description/
  * [74] 搜索二维矩阵
  */
 
@@ -13,7 +13,7 @@ function searchMatrix(matrix: number[][], target: number): boolean {
   // 通过二分法找到最后一个小于等于目标值的行
   let [upper, lower] = [0, rowNum - 1];
   while (upper < lower) {
-    const mid = Math.floor((upper + lower + 1) / 2);
+    const mid = (upper + lower + 1) >>> 1;
     if (matrix[mid][0] === target) return true;
     if (matrix[mid][0] > target) {
       lower = mid - 1;

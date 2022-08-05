@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=141 lang=typescript
- *
+ * https://leetcode.cn/problems/linked-list-cycle/
  * [141] 环形链表
  */
 

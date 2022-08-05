@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=131 lang=typescript
- *
+ * https://leetcode.cn/problems/palindrome-partitioning/description/
  * [131] 分割回文串
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=138 lang=typescript
- *
+ * https://leetcode.cn/problems/copy-list-with-random-pointer/
  * [138] 复制带随机指针的链表
  */
 

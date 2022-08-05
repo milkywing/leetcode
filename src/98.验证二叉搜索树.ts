@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=98 lang=typescript
- *
+ * https://leetcode.cn/problems/validate-binary-search-tree/description/
  * [98] 验证二叉搜索树
  */
 
@@ -17,16 +17,16 @@ function isValidBST(root: TreeNode | null): boolean {
   let prevVal = Number.NEGATIVE_INFINITY;
 
   while (p || stack.length) {
-    if (p) {
+    while (p) {
       stack.push(p);
       p = p.left;
-    } else {
-      p = stack.pop()!;
-      // 破坏了升序，不是二叉搜索树
-      if (p.val <= prevVal) return false;
-      prevVal = p.val;
-      p = p.right;
     }
+
+    p = stack.pop()!;
+    // 破坏了升序，不是二叉搜索树
+    if (p.val <= prevVal) return false;
+    prevVal = p.val;
+    p = p.right;
   }
 
   return true;

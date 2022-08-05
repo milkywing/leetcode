@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=144 lang=typescript
- *
+ * https://leetcode.cn/problems/binary-tree-preorder-traversal/description/
  * [144] 二叉树的前序遍历
  */
 

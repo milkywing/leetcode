@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=108 lang=typescript
- *
+ * https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/description/
  * [108] 将有序数组转换为二叉搜索树
  */
 

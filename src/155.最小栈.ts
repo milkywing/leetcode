@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=155 lang=typescript
- *
+ * https://leetcode.cn/problems/min-stack/description/
  * [155] 最小栈
  */
 

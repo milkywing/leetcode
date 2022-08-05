@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=111 lang=typescript
- *
+ * https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/
  * [111] 二叉树的最小深度
  */
 

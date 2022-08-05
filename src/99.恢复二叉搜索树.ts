@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=99 lang=typescript
- *
+ * https://leetcode.cn/problems/recover-binary-search-tree/description/
  * [99] 恢复二叉搜索树
  */
 

@@ -35,6 +35,5 @@ module.exports = {
   htmlWhitespaceSensitivity: 'css',
   // vue 文件中的 script 和 style 内不用缩进
   vueIndentScriptAndStyle: false,
-  // 换行符使用 lf
-  endOfLine: 'lf',
+  endOfLine: 'auto',
 };

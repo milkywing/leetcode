@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=165 lang=typescript
- *
+ * https://leetcode.cn/problems/compare-version-numbers/description/
  * [165] 比较版本号
  */
 

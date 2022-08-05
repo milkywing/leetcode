@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=134 lang=typescript
- *
+ * https://leetcode.cn/problems/gas-station/description/
  * [134] 加油站
  */
 

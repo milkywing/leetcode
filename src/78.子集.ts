@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=78 lang=typescript
- *
+ * https://leetcode.cn/problems/subsets/description/
  * [78] 子集
  */
 

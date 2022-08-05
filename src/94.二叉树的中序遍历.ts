@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=94 lang=typescript
- *
+ * https://leetcode.cn/problems/binary-tree-inorder-traversal/description/
  * [94] 二叉树的中序遍历
  */
 

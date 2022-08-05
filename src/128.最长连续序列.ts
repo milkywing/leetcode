@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=128 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-consecutive-sequence/description/
  * [128] 最长连续序列
  */
 

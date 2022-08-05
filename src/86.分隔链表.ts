@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=86 lang=typescript
- *
+ * https://leetcode.cn/problems/partition-list/solution/
  * [86] 分隔链表
  */
 

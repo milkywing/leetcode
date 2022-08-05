@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=93 lang=typescript
- *
+ * https://leetcode.cn/problems/restore-ip-addresses/description/
  * [93] 复原 IP 地址
  */
 

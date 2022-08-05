@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=148 lang=typescript
- *
+ * https://leetcode.cn/problems/sort-list/description/
  * [148] 排序链表
  */
 
@@ -53,6 +53,21 @@ function sortList(head: ListNode | null): ListNode | null {
   return dummyHead.next;
 }
 
+/** 断链操作，将链表切掉前 k 个节点，并返回后半部分的链表头 */
+const cutList = (head: ListNode | null, k: number): ListNode | null => {
+  let curr = head;
+  let count = k;
+  while (count > 0 && curr) {
+    curr = curr.next;
+    count--;
+  }
+  if (!curr) return null;
+
+  const currNext = curr.next;
+  curr.next = null;
+  return currNext;
+};
+
 /** 方案B：类似于数组，可以类比使用归并排序，将链表分成两半，对两半进行排序后的结果进行连接 */
 function sortListB(head: ListNode | null): ListNode | null {
   if (!head?.next) return head;
@@ -71,21 +86,6 @@ function sortListB(head: ListNode | null): ListNode | null {
   // 对两半进行排序
   return mergeTwoLists(sortListB(head), sortListB(midNext));
 }
-
-/** 断链操作，将链表切掉前 k 个节点，并返回后半部分的链表头 */
-const cutList = (head: ListNode | null, k: number): ListNode | null => {
-  let curr = head;
-  let count = k;
-  while (count > 0 && curr) {
-    curr = curr.next;
-    count--;
-  }
-  if (!curr) return null;
-
-  const currNext = curr.next;
-  curr.next = null;
-  return currNext;
-};
 
 /** 将两个有序链表合并为一个有序链表 */
 const mergeTwoLists = (list1: ListNode | null, list2: ListNode | null): ListNode | null => {

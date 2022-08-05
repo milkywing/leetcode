@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=88 lang=typescript
- *
+ * https://leetcode.cn/problems/merge-sorted-array/description/
  * [88] 合并两个有序数组
  */
 
