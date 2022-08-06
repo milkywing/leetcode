@@ -21,6 +21,6 @@ function findPeakElement(nums: number[]): number {
     }
   }
 
-  return right;
+  return left;
 }
 // @lc code=end

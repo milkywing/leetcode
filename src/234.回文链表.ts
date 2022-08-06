@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=234 lang=typescript
- *
+ * https://leetcode.cn/problems/palindrome-linked-list/description/
  * [234] 回文链表
  */
 

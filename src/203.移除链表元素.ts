@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=203 lang=typescript
- *
+ * https://leetcode.cn/problems/remove-linked-list-elements/description/
  * [203] 移除链表元素
  */
 

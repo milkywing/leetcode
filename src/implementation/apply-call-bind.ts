@@ -12,7 +12,7 @@ Function.prototype.myApply = function (thisArg: any, argArray?: any[]) {
   // 将函数放在上下文上执行，执行完成后清除
   const fnName = Symbol('fnName');
   context[fnName] = this;
-  const result = Array.isArray(argArray) ? context[fnName](argArray) : context[fnName]();
+  const result = Array.isArray(argArray) ? context[fnName](...argArray) : context[fnName]();
   delete context[fnName];
 
   return result;

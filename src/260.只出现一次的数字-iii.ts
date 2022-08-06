@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=260 lang=typescript
- *
+ * https://leetcode.cn/problems/single-number-iii/description/
  * [260] 只出现一次的数字 III
  */
 

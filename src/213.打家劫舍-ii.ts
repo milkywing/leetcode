@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=213 lang=typescript
- *
+ * https://leetcode.cn/problems/house-robber-ii/description/
  * [213] 打家劫舍 II
  */
 
@@ -26,9 +26,7 @@ const robDp = (nums: number[]): number => {
   let frontValue = Math.max(nums[length - 1], nums[length - 2]);
 
   for (let i = length - 3; i >= 0; i--) {
-    const temp = frontValue;
-    frontValue = Math.max(frontValue, backValue + nums[i]);
-    backValue = temp;
+    [frontValue, backValue] = [Math.max(frontValue, backValue + nums[i]), frontValue];
   }
 
   return frontValue;

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=200 lang=typescript
- *
+ * https://leetcode.cn/problems/number-of-islands/description/
  * [200] 岛屿数量
  */
 
@@ -18,6 +18,7 @@ function numIslands(grid: string[][]): number {
       if (isOne(grid, i, j)) {
         // 区域遍历起点，岛数加 1
         islandNum++;
+        // 对区域遍历到的 1 重置为 0
         grid[i][j] = '0';
         // 队列存放当前遍历点的相邻点位置
         const queue: [number, number][] = [[i, j]];

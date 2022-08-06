@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=232 lang=typescript
- *
+ * https://leetcode.cn/problems/implement-queue-using-stacks/description/
  * [232] 用栈实现队列
  */
 

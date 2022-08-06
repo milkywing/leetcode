@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=198 lang=typescript
- *
+ * https://leetcode.cn/problems/house-robber/description/
  * [198] 打家劫舍
  */
 

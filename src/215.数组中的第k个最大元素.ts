@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=215 lang=typescript
- *
+ * https://leetcode.cn/problems/kth-largest-element-in-an-array/description/
  * [215] 数组中的第K个最大元素
  */
 
@@ -20,12 +20,12 @@ function findKthLargest(nums: number[], k: number): number {
     const [pivotLeft, pivotRight] = partition(nums, left, right);
     if (targetIndex > pivotRight) {
       // 目标位置在基准区域右边，对右边进行划分
-      left = pivotLeft + 1;
+      left = pivotRight + 1;
       // 为下一次划分随机选择一个基准值
       swap(nums, left + Math.floor(Math.random() * (right - left + 1)), right);
     } else if (targetIndex < pivotLeft) {
       // 目标位置在基准区域左边，对左边进行划分
-      right = pivotRight - 1;
+      right = pivotLeft - 1;
       // 为下一次划分随机选择一个基准值
       swap(nums, left + Math.floor(Math.random() * (right - left + 1)), right);
     } else {

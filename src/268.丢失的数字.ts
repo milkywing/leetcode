@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=268 lang=typescript
- *
+ * https://leetcode.cn/problems/missing-number/description/
  * [268] 丢失的数字
  */
 

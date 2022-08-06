@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=199 lang=typescript
- *
+ * https://leetcode.cn/problems/binary-tree-right-side-view/description/
  * [199] 二叉树的右视图
  */
 

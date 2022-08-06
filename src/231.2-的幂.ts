@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=231 lang=typescript
- *
+ * https://leetcode.cn/problems/power-of-two/description/
  * [231] 2 的幂
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=236 lang=typescript
- *
+ * https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/
  * [236] 二叉树的最近公共祖先
  */
 
