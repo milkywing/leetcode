@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=239 lang=typescript
- *
+ * https://leetcode.cn/problems/sliding-window-maximum/description/
  * [239] 滑动窗口最大值
  */
 

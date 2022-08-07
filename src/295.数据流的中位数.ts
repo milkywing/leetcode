@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=295 lang=typescript
- *
+ * https://leetcode.cn/problems/find-median-from-data-stream/description/
  * [295] 数据流的中位数
  */
 

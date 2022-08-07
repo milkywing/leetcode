@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=404 lang=typescript
- *
+ * https://leetcode.cn/problems/sum-of-left-leaves/description/
  * [404] 左叶子之和
  */
 

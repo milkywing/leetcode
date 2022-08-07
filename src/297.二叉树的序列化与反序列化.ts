@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=297 lang=typescript
- *
+ * https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/
  * [297] 二叉树的序列化与反序列化
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=367 lang=typescript
- *
+ * https://leetcode.cn/problems/valid-perfect-square/description/
  * [367] 有效的完全平方数
  */
 

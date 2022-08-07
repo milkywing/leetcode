@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=318 lang=typescript
- *
+ * https://leetcode.cn/problems/maximum-product-of-word-lengths/description/
  * [318] 最大单词长度乘积
  */
 

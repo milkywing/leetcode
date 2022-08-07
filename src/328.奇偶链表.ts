@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=328 lang=typescript
- *
+ * https://leetcode.cn/problems/odd-even-linked-list/description/
  * [328] 奇偶链表
  */
 
@@ -17,7 +17,7 @@ function oddEvenList(head: ListNode | null): ListNode | null {
   let oddEnd = head;
 
   // 偶数区的第一个节点，一定为第二个节点
-  const eventStart = head.next;
+  const evenStart = head.next;
   // 当前偶数区的最后一个节点，开始时为第二个节点
   let evenEnd = head.next;
 
@@ -35,7 +35,7 @@ function oddEvenList(head: ListNode | null): ListNode | null {
     }
 
     // 将奇数区和偶数区拼在一起
-    oddEnd.next = eventStart;
+    oddEnd.next = evenStart;
   }
 
   return dummyHead.next;

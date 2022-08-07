@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=315 lang=typescript
- *
+ * https://leetcode.cn/problems/count-of-smaller-numbers-after-self/description/
  * [315] 计算右侧小于当前元素的个数
  */
 

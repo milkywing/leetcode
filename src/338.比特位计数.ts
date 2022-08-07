@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=338 lang=typescript
- *
+ * https://leetcode.cn/problems/counting-bits/description/
  * [338] 比特位计数
  */
 

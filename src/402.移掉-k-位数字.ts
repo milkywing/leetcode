@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=402 lang=typescript
- *
+ * https://leetcode.cn/problems/remove-k-digits/description/
  * [402] 移掉 K 位数字
  */
 

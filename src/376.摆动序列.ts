@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=376 lang=typescript
- *
+ * https://leetcode.cn/problems/wiggle-subsequence/description/
  * [376] 摆动序列
  */
 

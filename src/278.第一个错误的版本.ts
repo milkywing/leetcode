@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=278 lang=typescript
- *
+ * https://leetcode.cn/problems/first-bad-version/description/
  * [278] 第一个错误的版本
  */
 
@@ -22,7 +22,7 @@ const solution = (isBadVersion: any) => {
       const mid = left + ((right - left) >> 1);
       // mid 有错误，说明错误在中点左侧，也可能是当前中点
       if (isBadVersion(mid)) right = mid;
-      // mid 没有错误，说明错误在重点右侧
+      // mid 没有错误，说明错误在中点右侧
       else left = mid + 1;
     }
 

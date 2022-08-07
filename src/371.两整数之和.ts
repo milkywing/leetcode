@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=371 lang=typescript
- *
+ * https://leetcode.cn/problems/sum-of-two-integers/description/
  * [371] 两整数之和
  */
 

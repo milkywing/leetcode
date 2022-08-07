@@ -15,11 +15,11 @@ export const setSimulateInterval = (callback: () => void, ms: number): number =>
   timerId += 1;
   // 递归实现 interval
   const fn = () => {
-    timerMap[allocatedTimerId] = setTimeout(() => fn(), ms) as unknown as NodeJS.Timeout;
+    timerMap[allocatedTimerId] = setTimeout(fn, ms);
     callback();
   };
   // 启动函数
-  timerMap[allocatedTimerId] = setTimeout(fn, ms) as unknown as NodeJS.Timeout;
+  timerMap[allocatedTimerId] = setTimeout(fn, ms);
   return allocatedTimerId;
 };
 

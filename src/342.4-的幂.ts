@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=342 lang=typescript
- *
+ * https://leetcode.cn/problems/power-of-four/description/
  * [342] 4的幂
  */
 

@@ -1,11 +1,11 @@
 /*
  * @lc app=leetcode.cn id=322 lang=typescript
- *
+ * https://leetcode.cn/problems/coin-change/description/
  * [322] 零钱兑换
  */
 
 // @lc code=start
-/** 递归改动态规划： */
+/** 递归改动态规划 */
 function coinChange(coins: number[], amount: number): number {
   // 空间压缩优化
   const dp: number[] = Array(amount + 1).fill(+Infinity);
