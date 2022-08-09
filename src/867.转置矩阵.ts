@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=867 lang=typescript
- *
+ * https://leetcode.cn/problems/transpose-matrix/description/
  * [867] 转置矩阵
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=1721 lang=typescript
- *
+ * https://leetcode.cn/problems/swapping-nodes-in-a-linked-list/description/
  * [1721] 交换链表中的节点
  */
 

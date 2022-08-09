@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=654 lang=typescript
- *
+ * https://leetcode.cn/problems/maximum-binary-tree/description/
  * [654] 最大二叉树
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=486 lang=typescript
- *
+ * https://leetcode.cn/problems/predict-the-winner/description/
  * [486] 预测赢家
  */
 
@@ -30,8 +30,23 @@ function PredictTheWinner(nums: number[]): boolean {
   return dp[0][length - 1] >= 0;
 }
 
-/** 递归方案 */
-function PredictTheWinnerRecur(nums: number[]): boolean {
+/** 单递归方案 */
+const predictTheWinnerRecur = (nums: number[]): boolean => {
+  return maxDiff(nums, 0, nums.length - 1) >= 0;
+};
+
+/** 函数返回当前玩家面对 [start,end] 范围的点数，能与对手拉开的差值（称之为优势） */
+const maxDiff = (nums: number[], start: number, end: number) => {
+  if (start === end) return nums[start];
+
+  // 这里的 maxDiff 是对手的优势
+  const diffWhenTakeStart = nums[start] - maxDiff(nums, start + 1, end);
+  const diffWhenTakeEnd = nums[end] - maxDiff(nums, start, end - 1);
+  return Math.max(diffWhenTakeStart, diffWhenTakeEnd);
+};
+
+/** 双递归方案 */
+function predictTheWinnerBinRecur(nums: number[]): boolean {
   return firstTake(nums, 0, nums.length - 1) >= secondTake(nums, 0, nums.length - 1);
 }
 

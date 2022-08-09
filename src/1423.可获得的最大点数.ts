@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=1423 lang=typescript
- *
+ * https://leetcode.cn/problems/maximum-points-you-can-obtain-from-cards/description/
  * [1423] 可获得的最大点数
  */
 

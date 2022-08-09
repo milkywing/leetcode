@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=669 lang=typescript
- *
+ * https://leetcode.cn/problems/trim-a-binary-search-tree/description/
  * [669] 修剪二叉搜索树
  */
 

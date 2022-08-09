@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=692 lang=typescript
- *
+ * https://leetcode.cn/problems/top-k-frequent-words/description/
  * [692] 前K个高频单词
  */
 

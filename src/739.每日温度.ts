@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=739 lang=typescript
- *
+ * https://leetcode.cn/problems/daily-temperatures/description/
  * [739] 每日温度
  */
 

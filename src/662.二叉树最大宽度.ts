@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=662 lang=typescript
- *
+ * https://leetcode.cn/problems/maximum-width-of-binary-tree/description/
  * [662] 二叉树最大宽度
  */
 

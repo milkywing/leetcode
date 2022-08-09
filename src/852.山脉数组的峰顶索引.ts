@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=852 lang=typescript
- *
+ * https://leetcode.cn/problems/peak-index-in-a-mountain-array/description/
  * [852] 山脉数组的峰顶索引
  */
 

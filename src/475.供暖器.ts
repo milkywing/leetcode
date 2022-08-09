@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=475 lang=typescript
- *
+ * https://leetcode.cn/problems/heaters/description/
  * [475] 供暖器
  */
 

@@ -1,12 +1,12 @@
 /*
  * @lc app=leetcode.cn id=1139 lang=typescript
- *
+ * https://leetcode.cn/problems/largest-1-bordered-square/description/
  * [1139] 最大的以 1 为边界的正方形
  */
 
 // @lc code=start
 /**
- * 生成两个辅助数组：right[i][j] 表示 (i,j) 右方连续出现 1 的个数，down[i][j] 表示 (i,j) 下方连续出现 1 的个数，
+ * 生成两个辅助数组：right[i][j] 表示 (i,j) 右方连续（包括自身）出现 1 的个数，down[i][j] 表示 (i,j) 下方连续（包括自身）出现 1 的个数，
  * 之后进行正方形判定时直接查表即可
  */
 function largest1BorderedSquare(grid: number[][]) {

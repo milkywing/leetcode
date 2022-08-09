@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=958 lang=typescript
- *
+ * https://leetcode.cn/problems/check-completeness-of-a-binary-tree/description/
  * [958] 二叉树的完全性检验
  */
 

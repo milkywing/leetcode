@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=678 lang=typescript
- *
+ * https://leetcode.cn/problems/valid-parenthesis-string/description/
  * [678] 有效的括号字符串
  */
 

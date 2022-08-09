@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=461 lang=typescript
- *
+ * https://leetcode.cn/problems/hamming-distance/description/
  * [461] 汉明距离
  */
 

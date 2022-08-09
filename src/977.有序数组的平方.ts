@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=977 lang=typescript
- *
+ * https://leetcode.cn/problems/squares-of-a-sorted-array/description/
  * [977] 有序数组的平方
  */
 

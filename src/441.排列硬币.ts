@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=441 lang=typescript
- *
+ * https://leetcode.cn/problems/arranging-coins/description/
  * [441] 排列硬币
  */
 

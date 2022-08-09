@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=2095 lang=typescript
- *
+ * https://leetcode.cn/problems/delete-the-middle-node-of-a-linked-list/description/
  * [2095] 删除链表的中间节点
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=455 lang=typescript
- *
+ * https://leetcode.cn/problems/assign-cookies/description/
  * [455] 分发饼干
  */
 

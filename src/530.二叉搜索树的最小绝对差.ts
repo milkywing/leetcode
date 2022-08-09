@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=530 lang=typescript
- *
+ * https://leetcode.cn/problems/minimum-absolute-difference-in-bst/description/
  * [530] 二叉搜索树的最小绝对差
  */
 

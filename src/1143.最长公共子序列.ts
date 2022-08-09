@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=1143 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-common-subsequence/description/
  * [1143] 最长公共子序列
  */
 
@@ -27,18 +27,25 @@ function longestCommonSubsequence(text1: string, text2: string): number {
   return dp[0][0];
 }
 
+const longestCommonSubsequenceB = (text1: string, text2: string): number => {
+  return longestCommonSubsequenceBCore(text1, 0, text2, 0);
+};
+
 /**
  * 从左到右尝试模型：
  */
-const longestCommonSubsequenceB = (text1: string, text2: string): number => {
+const longestCommonSubsequenceBCore = (text1: string, index1: number, text2: string, index2: number): number => {
   // baseCase：任意字符串为空返回0
-  if (text1.length === 0 || text2.length === 0) return 0;
+  if (text1.length === index1 || text2.length === index2) return 0;
 
   // 如果两字符串的第一个字符相同，纳入子序列中，继续考虑两个字符串去除头之后的最长子序列
-  if (text1[0] === text2[0]) {
-    return 1 + longestCommonSubsequence(text1.slice(1), text2.slice(1));
+  if (text1[index1] === text2[index1]) {
+    return 1 + longestCommonSubsequenceBCore(text1, index1 + 1, text2, index2 + 1);
   }
   // 如果两字符串的第一个字不相相同，分别考虑两个字符串分别去除头之后的最长子序列，取较大值
-  return Math.max(longestCommonSubsequence(text1, text2.slice(1)), longestCommonSubsequence(text1.slice(1), text2));
+  return Math.max(
+    longestCommonSubsequenceBCore(text1, index1, text2, index2 + 1),
+    longestCommonSubsequenceBCore(text1, index1 + 1, text2, index2),
+  );
 };
 // @lc code=end

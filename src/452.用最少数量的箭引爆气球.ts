@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=452 lang=typescript
- *
+ * https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/description/
  * [452] 用最少数量的箭引爆气球
  */
 

@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=532 lang=typescript
- *
+ * https://leetcode.cn/problems/k-diff-pairs-in-an-array/description/
  * [532] 数组中的 k-diff 数对
  */
 

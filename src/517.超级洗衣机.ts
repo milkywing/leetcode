@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=517 lang=typescript
- *
+ * https://leetcode.cn/problems/super-washing-machines/description/
  * [517] 超级洗衣机
  */
 
@@ -37,7 +37,7 @@ function findMinMoves(machines: number[]): number {
       // 对应情况 1
       result = Math.max(result, leftNeed + rightNeed);
     } else {
-      // 对应情况 2
+      // 对应情况 2、3
       result = Math.max(result, Math.abs(leftNeed), Math.abs(rightNeed));
     }
     leftSum += machines[i];

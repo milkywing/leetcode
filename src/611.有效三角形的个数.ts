@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=611 lang=typescript
- *
+ * https://leetcode.cn/problems/valid-triangle-number/description/
  * [611] 有效三角形的个数
  */
 

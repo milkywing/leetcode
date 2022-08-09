@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=946 lang=typescript
- *
+ * https://leetcode.cn/problems/validate-stack-sequences/description/
  * [946] 验证栈序列
  */
 

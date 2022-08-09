@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=674 lang=typescript
- *
+ * https://leetcode.cn/problems/longest-continuous-increasing-subsequence/description/
  * [674] 最长连续递增序列
  */
 

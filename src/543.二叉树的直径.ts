@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=543 lang=typescript
- *
+ * https://leetcode.cn/problems/diameter-of-binary-tree/description/
  * [543] 二叉树的直径
  */
 

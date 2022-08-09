@@ -23,3 +23,15 @@ export const curry = (fn: Fn, ...args1: any[]) => {
 export const curryES6 = (fn: Fn, ...args: any[]) => {
   return fn.length <= args.length ? fn(...args) : curryES6.bind(null, fn, ...args);
 };
+
+// pipe(fn1, fn2, fn3)(args) === fn3(fn2(fn1(args)))
+export const pipe =
+  (...fns: Function[]) =>
+  (...args: any[]) =>
+    fns.reduce((acc, fn) => fn(acc), args);
+
+// compose(fn1, fn2, fn3)(args) === fn1(fn2(fn3(args)))
+export const compose =
+  (...fns: Function[]) =>
+  (...args: any[]) =>
+    fns.reverse().reduce((acc, fn) => fn(acc), args);

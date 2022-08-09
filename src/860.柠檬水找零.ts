@@ -1,6 +1,6 @@
 /*
  * @lc app=leetcode.cn id=860 lang=typescript
- *
+ * https://leetcode.cn/problems/lemonade-change/description/
  * [860] 柠檬水找零
  */
 
