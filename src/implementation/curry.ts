@@ -24,14 +24,14 @@ export const curryES6 = (fn: Fn, ...args: any[]) => {
   return fn.length <= args.length ? fn(...args) : curryES6.bind(null, fn, ...args);
 };
 
-// pipe(fn1, fn2, fn3)(args) === fn3(fn2(fn1(args)))
+// pipe(fn1, fn2, fn3)(val) === fn3(fn2(fn1(val)))
 export const pipe =
   (...fns: Function[]) =>
-  (...args: any[]) =>
-    fns.reduce((acc, fn) => fn(acc), args);
+  (val: any) =>
+    fns.reduce((acc, fn) => fn(acc), val);
 
-// compose(fn1, fn2, fn3)(args) === fn1(fn2(fn3(args)))
+// compose(fn1, fn2, fn3)(val) === fn1(fn2(fn3(val)))
 export const compose =
   (...fns: Function[]) =>
-  (...args: any[]) =>
-    fns.reverse().reduce((acc, fn) => fn(acc), args);
+  (val: any) =>
+    fns.reverse().reduce((acc, fn) => fn(acc), val);
