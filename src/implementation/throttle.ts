@@ -1,3 +1,4 @@
+// IMPORTANT
 /** 节流：持续触发并不会执行多次，在一段时间内，只执行一次 */
 export const throttle = <T extends (...args: any[]) => any>(fun: T, wait: number): T => {
   // 上次触发的时间

@@ -4,6 +4,7 @@
  * [300] 最长递增子序列
  */
 
+// IMPORTANT
 // @lc code=start
 /** 递归改动态规划 */
 function lengthOfLIS(nums: number[]): number {

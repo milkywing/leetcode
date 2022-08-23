@@ -1,3 +1,4 @@
+// IMPORTANT
 /** 防抖：距离下次触发时间间隔过短的，不予执行；触发后在指定时长内无下一次触发才会予以执行 */
 export const debounce = <T extends (...args: any[]) => any>(fun: T, wait: number, immediate = false): T => {
   let timer: NodeJS.Timeout | null = null;

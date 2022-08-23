@@ -1,5 +1,6 @@
 type Fn = (...arg: any[]) => any;
 
+// IMPORTANT
 /** 函数柯里化：将多参函数的一次调用，转换为分批参数多次调用 */
 export const curry = (fn: Fn, ...args1: any[]) => {
   // 获取函数需要的参数长度
