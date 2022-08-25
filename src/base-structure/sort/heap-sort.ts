@@ -4,6 +4,7 @@
  */
 import { rangeFromZero, swap } from './utils';
 
+// IMPORTANT
 /** 向上调整位置 i 的节点，维持大顶堆 */
 const shiftUp = (arr: number[], i: number) => {
   // index 为被调整节点下标

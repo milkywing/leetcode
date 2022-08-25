@@ -16,7 +16,7 @@ export const simulateTimeout = (callback: () => void, delay: number): number => 
 
 /** 打印屏幕帧率 */
 export const printScreenFps = () => {
-  let preTimestamp = Date.now();
+  let preTimestamp = performance.now();
 
   const fun = (timestamp: number) => {
     console.log((1000 / (timestamp - preTimestamp)).toFixed(2));

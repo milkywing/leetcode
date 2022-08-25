@@ -3,6 +3,7 @@
 // log(b, a) = d => T(N) = O(N^d * logN)
 // log(b, a) < d => T(N) = O(N^d)
 
+// IMPORTANT
 /** 归并排序——O(n*log n)——稳定 */
 export const mergeSort = (arr: number[]): number[] => {
   return mergeSortCore(arr, 0, arr.length);

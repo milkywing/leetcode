@@ -1,5 +1,6 @@
 import { swap } from './utils';
 
+// IMPORTANT
 // 排序核心，默认取right位置的值作为基准，对[left, right]区间的数进行划分，使其按【小于基准、等于基准、大于基准】排序，并返回等于基准值区边界，本质是把基准值放到正确的位置
 const partition = (arr: number[], left: number, right: number) => {
   const pivot = arr[right];
@@ -19,7 +20,7 @@ const partition = (arr: number[], left: number, right: number) => {
       pLess++;
       i++;
     } else if (arr[i] > pivot) {
-      // 当前值大于基准，把当前值和大区的前一个值替换，大区左扩，遍历指针保持不动
+      // 当前值大于基准，把当前值和大区的前一个值替换，大区左扩，【遍历指针保持不动】
       swap(arr, i, pMore - 1);
       pMore--;
     } else {
