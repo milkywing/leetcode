@@ -36,6 +36,7 @@ const partition = (arr: number[], left: number, right: number) => {
 };
 
 const quickSortCore = (arr: number[], left: number, right: number) => {
+  // 终止条件：不符合 left < right
   if (left >= right) return;
 
   // [left, right]区间随机选择一个数，并和区间最后一个值交换，作为基准值
