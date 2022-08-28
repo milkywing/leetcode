@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/swapping-nodes-in-a-linked-list/description/
  * [1721] 交换链表中的节点
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

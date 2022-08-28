@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/partition-list/solution/
  * [86] 分隔链表
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

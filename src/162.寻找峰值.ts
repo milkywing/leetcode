@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/find-peak-element/description/
  * [162] 寻找峰值
  */
+// BINARYSEARCH
 
 // @lc code=start
 function findPeakElement(nums: number[]): number {

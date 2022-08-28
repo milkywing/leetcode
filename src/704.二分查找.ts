@@ -3,13 +3,14 @@
  * https://leetcode.cn/problems/binary-search/description/
  * [704] 二分查找
  */
+// BINARYSEARCH
 
 // @lc code=start
 function search(nums: number[], target: number): number {
-  let [left, right] = [0, nums.length];
+  let [left, right] = [0, nums.length - 1];
 
   while (left <= right) {
-    const mid = (left + right) >> 1;
+    const mid = (left + right) >>> 1;
     if (nums[mid] === target) return mid;
     if (nums[mid] < target) left = mid + 1;
     else right = mid - 1;

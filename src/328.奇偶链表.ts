@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/odd-even-linked-list/description/
  * [328] 奇偶链表
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

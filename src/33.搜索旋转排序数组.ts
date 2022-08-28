@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/search-in-rotated-sorted-array/description/
  * [33] 搜索旋转排序数组
  */
+// BINARYSEARCH
 
 // @lc code=start
 /** 旋转后的数组会形成左右两个单调区域，在二分取中点时，需要先确定中点在左单调区还是右单调区 */

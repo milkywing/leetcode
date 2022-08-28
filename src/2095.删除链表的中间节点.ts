@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/delete-the-middle-node-of-a-linked-list/description/
  * [2095] 删除链表的中间节点
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

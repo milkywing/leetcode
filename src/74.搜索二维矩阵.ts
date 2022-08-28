@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/search-a-2d-matrix/description/
  * [74] 搜索二维矩阵
  */
+// BINARYSEARCH
 
 // @lc code=start
 /** 先在第一列上对行进行二分搜索找到目标行，再在目标行上进行二分搜索找目标值 */

@@ -3,8 +3,9 @@
  * https://leetcode.cn/problems/longest-increasing-subsequence/description/
  * [300] 最长递增子序列
  */
-
 // IMPORTANT
+// BINARYSEARCH
+
 // @lc code=start
 /** 递归改动态规划 */
 function lengthOfLIS(nums: number[]): number {

@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/reverse-linked-list/description/
  * [206] 反转链表
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/valid-triangle-number/description/
  * [611] 有效三角形的个数
  */
+// BINARYSEARCH
 
 // @lc code=start
 /** 升序排序，先选取大边和中边，再从中边左侧选取小边 */
@@ -23,11 +24,11 @@ function triangleNumber(nums: number[]): number {
       let [left, right] = [0, j - 1];
 
       while (left <= right) {
-        const mid = (left + right) >> 1;
-        if (nums[mid] + nums[j] > nums[i]) {
-          right = mid - 1;
-        } else {
+        const mid = (left + right) >>> 1;
+        if (nums[mid] + nums[j] <= nums[i]) {
           left = mid + 1;
+        } else {
+          right = mid - 1;
         }
       }
       result += j - left;

@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/find-the-duplicate-number/
  * [287] 寻找重复数
  */
+// LINKLIST
 
 // @lc code=start
 /** 使用 下标->值（下一个下标） 的映射来形成链表，然后可以套用【142.环形链表-ii】求解交点 */

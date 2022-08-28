@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/
  * [34] 在排序数组中查找元素的第一个和最后一个位置
  */
+// BINARYSEARCH
 
 // @lc code=start
 /**
@@ -15,12 +16,12 @@ function searchRange(nums: number[], target: number): number[] {
 
   let [left, right] = [0, nums.length - 1];
   // 找到 target 的左边界 leftIndex，即找到第一个大于等于 target 的位置（参考【35】）
-  while (left <= right) {
+  while (left < right) {
     const mid = (left + right) >> 1;
     if (nums[mid] < target) {
       left = mid + 1;
     } else {
-      right = mid - 1;
+      right = mid;
     }
   }
 
@@ -30,16 +31,16 @@ function searchRange(nums: number[], target: number): number[] {
 
   // 找到 target 的右边界 rightIndex，即第一个大于 target 的位置 - 1
   right = nums.length - 1;
-  while (left <= right) {
+  while (left < right) {
     const mid = (left + right) >> 1;
     if (nums[mid] <= target) {
       left = mid + 1;
     } else {
-      right = mid - 1;
+      right = mid;
     }
   }
 
-  const rightIndex = left - 1;
+  const rightIndex = nums[left] === target ? left : left - 1;
 
   return [leftIndex, rightIndex];
 }

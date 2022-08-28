@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/arranging-coins/description/
  * [441] 排列硬币
  */
+// BINARYSEARCH
 
 // @lc code=start
 /**

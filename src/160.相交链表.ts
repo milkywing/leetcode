@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/intersection-of-two-linked-lists/description/
  * [160] 相交链表
  */
+// LINKLIST
 
 import { ListNode } from './model/node';
 

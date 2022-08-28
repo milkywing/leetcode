@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/valid-perfect-square/description/
  * [367] 有效的完全平方数
  */
+// BINARYSEARCH
 
 // @lc code=start
 /** 二分在 [0,num] 区间内看能否找到 targe，使得 target**2 为 num */

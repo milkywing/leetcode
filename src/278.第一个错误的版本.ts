@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/first-bad-version/description/
  * [278] 第一个错误的版本
  */
+// BINARYSEARCH
 
 // @lc code=start
 /**

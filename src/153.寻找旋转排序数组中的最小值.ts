@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/
  * [153] 寻找旋转排序数组中的最小值
  */
+// BINARYSEARCH
 
 // @lc code=start
 /** 目标是找到右单调区的最小值（右单调区的最左值） */
