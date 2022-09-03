@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/unique-paths/description/
  * [62] 不同路径
  */
+// DYNAMIC
 
 // @lc code=start
 /** 递归改表查询动态规划 */

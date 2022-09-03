@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/subsets/description/
  * [78] 子集
  */
+// BACKTRACK
 
 // @lc code=start
 let result: number[][] = [];

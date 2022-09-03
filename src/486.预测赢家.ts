@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/predict-the-winner/description/
  * [486] 预测赢家
  */
+// DYNAMIC
 
 // @lc code=start
 function PredictTheWinner(nums: number[]): boolean {

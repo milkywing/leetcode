@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/house-robber/description/
  * [198] 打家劫舍
  */
+// DYNAMIC
 
 // @lc code=start
 /**

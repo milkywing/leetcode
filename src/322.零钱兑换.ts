@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/coin-change/description/
  * [322] 零钱兑换
  */
+// DYNAMIC
 
 // @lc code=start
 /** 递归改动态规划 */

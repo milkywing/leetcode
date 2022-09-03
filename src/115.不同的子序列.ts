@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/distinct-subsequences/description/
  * [115] 不同的子序列
  */
+// DYNAMIC
 
 // @lc code=start
 /**
@@ -39,20 +40,20 @@ function numDistinct(s: string, t: string): number {
 /**
  * 从左到右尝试模型：
  */
-const numDistinctB = (s: string, t: string): number => {
+const numDistinctB = (s: string, t: string, index1: number, index2: number): number => {
   // baseCase1：目标字符都匹配完了，得到一种方案
-  if (t.length === 0) return 1;
+  if (t.length === index2) return 1;
   // baseCase2：目标字符串还没匹配完，源字符串就用光了，方案不通
-  if (s.length === 0) return 0;
+  if (s.length === index1) return 0;
 
   // 如果源字符串头和目标字符串头相同，右两个互斥选择
   // 1.选择匹配，继续考虑两个字符串去除头之后的不同的子序列个数
   // 2.不选择匹配，只有源字符串去除头，继续考虑两个字符串的不同的子序列个数
   // 两种互斥情况加起来
   if (s[0] === t[0]) {
-    return numDistinct(s.slice(1), t.slice(1)) + numDistinct(s.slice(1), t);
+    return numDistinctB(s, t, index1 + 1, index2 + 1) + numDistinctB(s, t, index1 + 1, index2);
   }
   // 如果源字符串头和目标字符串头不相同，不能匹配，只有源字符串去除头，继续考虑两个字符串的不同的子序列个数
-  return numDistinct(s.slice(1), t);
+  return numDistinctB(s, t, index1 + 1, index2);
 };
 // @lc code=end

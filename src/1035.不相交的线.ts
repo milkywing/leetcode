@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/uncrossed-lines/description/
  * [1035] 不相交的线
  */
+// DYNAMIC
 
 // @lc code=start
 /** 最长公共子序列的变种，参考【1143.最长公共子序列】 */

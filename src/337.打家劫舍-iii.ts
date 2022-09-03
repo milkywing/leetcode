@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/house-robber-iii/description/
  * [337] 打家劫舍 III
  */
+// DYNAMIC
 
 import { TreeNode } from './model/node';
 
@@ -38,14 +39,14 @@ const robB = (root: TreeNode | null): number => {
   // 选择偷头节点，下次只能隔一个节点开始偷
   let moneyWhenTakeRoot = root.val;
   if (root.left) {
-    moneyWhenTakeRoot += rob(root.left.left) + rob(root.left.right);
+    moneyWhenTakeRoot += robB(root.left.left) + robB(root.left.right);
   }
   if (root.right) {
-    moneyWhenTakeRoot += rob(root.right.left) + rob(root.right.right);
+    moneyWhenTakeRoot += robB(root.right.left) + robB(root.right.right);
   }
 
   // 选择不偷头节点，可以直接从子节点开始偷
-  const moneyWhenNotTakeRoot = rob(root.left) + rob(root.right);
+  const moneyWhenNotTakeRoot = robB(root.left) + robB(root.right);
 
   return Math.max(moneyWhenNotTakeRoot, moneyWhenTakeRoot);
 };

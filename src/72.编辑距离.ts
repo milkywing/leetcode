@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/edit-distance/
  * [72] 编辑距离
  */
+// DYNAMIC
 
 // @lc code=start
 /** 递归改动态规划 */
@@ -35,7 +36,7 @@ function minDistance(word1: string, word2: string): number {
 
 /** 从左到右尝试模型 */
 const minDistanceCore = (word1: string, word2: string, i1: number, i2: number): number => {
-  // baseCase：任意一方匹配完了，只能将剩余的位置删掉
+  // baseCase：任意一方匹配完了，只能将剩余的位置删掉/插入
   if (word1.length === i1 || word2.length === i2) return word1.length - i1 + word2.length - i2;
 
   // 当前两个头一致，继续比较下一个位置

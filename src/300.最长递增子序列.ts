@@ -5,6 +5,7 @@
  */
 // IMPORTANT
 // BINARYSEARCH
+// DYNAMIC
 
 // @lc code=start
 /** 递归改动态规划 */

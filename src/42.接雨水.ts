@@ -3,8 +3,9 @@
  * https://leetcode.cn/problems/trapping-rain-water/description/
  * [42] 接雨水
  */
-
 // IMPORTANT
+// MONOSTACK
+
 // @lc code=start
 /**
  * 某个位置是低洼（该位置左右两边有更高的高度），才能存储雨水，该位置储水量为左右
