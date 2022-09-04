@@ -11,7 +11,7 @@ export const deepClone = (obj: Object, hash = new WeakMap()) => {
   if (hash.get(obj)) return hash.get(obj);
 
   // 创建对象的拷贝对象，并递归拷贝对象内的值
-  const cloneObj = obj.constructor();
+  const cloneObj = new (obj as any).constructor();
   hash.set(obj, cloneObj);
   Object.keys(obj).forEach((key) => {
     cloneObj[key] = deepClone(obj[key], hash);
