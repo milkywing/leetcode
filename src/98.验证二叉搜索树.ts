@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/validate-binary-search-tree/description/
  * [98] 验证二叉搜索树
  */
+// BINARYTREE
 
 import { TreeNode } from './model/node';
 

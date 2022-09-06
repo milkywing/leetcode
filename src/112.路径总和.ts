@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/path-sum/description/
  * [112] 路径总和
  */
+// BINARYTREE
 
 import { TreeNode } from './model/node';
 

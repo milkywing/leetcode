@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/sum-of-left-leaves/description/
  * [404] 左叶子之和
  */
+// BINARYTREE
 
 import { TreeNode } from './model/node';
 

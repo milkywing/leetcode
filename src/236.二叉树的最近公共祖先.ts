@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/description/
  * [236] 二叉树的最近公共祖先
  */
+// BINARYTREE
 
 import { TreeNode } from './model/node';
 

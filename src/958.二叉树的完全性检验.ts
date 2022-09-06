@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/check-completeness-of-a-binary-tree/description/
  * [958] 二叉树的完全性检验
  */
+// BINARYTREE
 
 import { TreeNode } from './model/node';
 
@@ -24,21 +25,24 @@ function isCompleteTree(root: TreeNode | null): boolean {
   let flag = false;
 
   while (queue.length) {
-    const current = queue.shift()!;
-    const left = current.left;
-    const right = current.right;
+    let curLevelNodeNum = queue.length;
 
-    // 发现一个节点有右孩子，无左孩子，则说明不是完全二叉树
-    if (!left && right) return false;
-    // 本层遇到了空节点，如果接下来要遍历的节点有非空的，则不是完全二叉树
-    if (flag && (left || right)) return false;
+    while (curLevelNodeNum--) {
+      const current = queue.shift()!;
+      const left = current.left;
+      const right = current.right;
 
-    if (left) queue.push(left);
-    if (right) queue.push(right);
+      // 发现一个节点有右孩子，无左孩子，则说明不是完全二叉树
+      if (!left && right) return false;
+      // 本层遇到了空节点，如果接下来要遍历的节点有非空的，则不是完全二叉树
+      if (flag && (left || right)) return false;
+      // 遇到第一个空节点
+      if (!left || !right) {
+        flag = true;
+      }
 
-    // 遇到第一个空节点
-    if (!left || !right) {
-      flag = true;
+      if (left) queue.push(left);
+      if (right) queue.push(right);
     }
   }
 

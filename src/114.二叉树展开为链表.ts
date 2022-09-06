@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/
  * [114] 二叉树展开为链表
  */
+// BINARYTREE
 // LINKLIST
 
 import { TreeNode } from './model/node';
