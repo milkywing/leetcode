@@ -25,4 +25,26 @@ function findDuplicate(nums: number[]): number {
 
   return fast;
 }
+
+// 数组前插入一个 0，然后原地交换法
+const findDuplicateB = (nums: number[]): number => {
+  nums.unshift(0);
+
+  let i = 0;
+  while (i < nums.length) {
+    // 如果当前值等于索引，那么直接跳过
+    if (nums[i] === i) {
+      i++;
+      continue;
+    }
+    // 如果需要交换的索引位置已经存在相同值，直接结束，返回当前值
+    if (nums[nums[i]] === nums[i]) {
+      return nums[i];
+    }
+    // 交换当前值，和对应索引存在的值
+    [nums[nums[i]], nums[i]] = [nums[i], nums[nums[i]]];
+  }
+
+  return -1;
+};
 // @lc code=end

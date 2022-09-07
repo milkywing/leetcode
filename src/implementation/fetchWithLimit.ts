@@ -1,10 +1,10 @@
 /** 并发数量控制 */
 export const fetchWithLimit = (urls: string[], limit: number, callback?: Function) => {
-  const cloneUrls = urls.slice(0);
-  // 当前执行任务数量、当前完成任务数量
-  let [concurrentNum, finishedNum] = [0, 0];
-
   new Promise<void>((resolve) => {
+    const cloneUrls = urls.slice(0);
+    // 当前执行任务数量、当前完成任务数量
+    let [concurrentNum, finishedNum] = [0, 0];
+
     const schedule = () => {
       // 所有任务完成结束调度，执行回调
       if (finishedNum === urls.length) {

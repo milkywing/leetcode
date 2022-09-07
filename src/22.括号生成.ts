@@ -3,6 +3,7 @@
  * https://leetcode.cn/problems/generate-parentheses/description/
  * [22] 括号生成
  */
+// BACKTRACK
 
 // @lc code=start
 let result: string[] = [];

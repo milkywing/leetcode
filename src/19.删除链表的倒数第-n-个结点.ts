@@ -20,10 +20,10 @@ function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 
   // 快指针先走 n 步，然后快慢指针一起走，快指针走完后慢指针就是被删节点的前一个节点
   for (let i = 0; i < n && fast.next; i++) {
-    fast = fast?.next;
+    fast = fast.next;
   }
 
-  while (fast?.next) {
+  while (fast.next) {
     fast = fast.next;
     slow = slow.next!;
   }

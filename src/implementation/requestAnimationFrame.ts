@@ -17,12 +17,17 @@ export const simulateTimeout = (callback: () => void, delay: number): number => 
 /** 打印屏幕帧率 */
 export const printScreenFps = () => {
   let preTimestamp = performance.now();
+  let handle: number;
 
   const fun = (timestamp: number) => {
     console.log((1000 / (timestamp - preTimestamp)).toFixed(2));
     preTimestamp = timestamp;
-    requestAnimationFrame(fun);
+    handle = requestAnimationFrame(fun);
   };
 
-  requestAnimationFrame(fun);
+  handle = requestAnimationFrame(fun);
+
+  return () => {
+    cancelAnimationFrame(handle);
+  };
 };

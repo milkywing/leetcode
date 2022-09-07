@@ -3,15 +3,12 @@ type Fn = (...arg: any[]) => any;
 // IMPORTANT
 /** 函数柯里化：将多参函数的一次调用，转换为分批参数多次调用 */
 export const curry = (fn: Fn, ...args1: any[]) => {
-  // 获取函数需要的参数长度
-  const { length } = fn;
-
   return function (this: any, ...args2: any[]) {
     // 拼接参数
     const subArgs = [...args1, ...args2];
 
     // 判断参数的长度是否已经满足函数所需参数的长度
-    if (subArgs.length >= length) {
+    if (subArgs.length >= fn.length) {
       // 如果满足，执行函数
       return fn.apply(this, subArgs);
     }

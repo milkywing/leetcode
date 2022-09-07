@@ -6,13 +6,12 @@ import { rangeFromZero, swap } from './utils';
 
 // IMPORTANT
 /** 向上调整位置 i 的节点，维持大顶堆 */
-const shiftUp = (arr: number[], i: number) => {
+const shiftUp = (arr: number[], index: number) => {
   // index 为被调整节点下标
-  let index = i;
   let parentIndex = (index - 1) >>> 1;
 
   // 被调整的节点只要小于父节点，就一直跟父节点交换（向上调整）
-  while (arr[parentIndex] < arr[index]) {
+  while (index > 0 && arr[parentIndex] < arr[index]) {
     swap(arr, parentIndex, index);
     index = parentIndex;
     parentIndex = (index - 1) >>> 1;
