@@ -1,6 +1,11 @@
 .DS_Store
+
+# ts
 .nyc_output
 coverage
 node_modules
 package-lock.json
-src/**/*.js
+ts/src/**/*.js
+
+# cpp
+build
