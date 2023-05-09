@@ -1,11 +1,18 @@
 cmake_minimum_required(VERSION 3.21)
-project(leetcode)
 
 if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
+  set(CMAKE_BUILD_TYPE Release)
 endif ()
 
-file(GLOB_RECURSE SRC_LIST CONFIGURE_DEPENDS src/*.cpp include/*.h)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(Leet STATIC ${SRC_LIST})
-target_include_directories(Leet PUBLIC include)
+project(leetcode)
+
+file(GLOB srcList CONFIGURE_DEPENDS src/*.cpp)
+add_library(leet STATIC ${srcList})
+target_include_directories(leet PRIVATE include)
+
+add_executable(main main.cpp)
+target_include_directories(main PUBLIC include)
